@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exportify - Emprendedoras al Mundo</title>
+    <link rel="stylesheet" href="exportify_style.css" />
+    <script src="exportify_script.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="logo">Exportify</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo de productos</a></li>
+          <li><a href="#ofrecer">Producto</a></li>
+          <li><a href="#ofrecer">Seguimiento</a></li>
+          <li><a href="#ofrecer">Foro</a></li>
+
+        </ul>
+      </nav>
+      <button id="loginBtn" class="btn-login">Login</button>     
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <h2>Vende tus productos al mundo</h2>
+      <p>Plataforma creada para mujeres emprendedoras chilenas que quieren llegar al mercado internacional.</p>
+      <button class="btn-primary" id="verCatalogoBtn">Ver Catálogo</button>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="catalog-section">
+      <h2>Catálogo Internacional</h2>
+      <div id="productList" class="catalog-grid"></div>
+    </section>
+
+    <!-- FORMULARIO PARA OFRECER PRODUCTO -->
+    <section id="ofrecer" class="form-section">
+      <h2>Ofrecer Producto</h2>
+      <form id="productForm" class="product-form">
+        <input type="text" id="nombreProducto" placeholder="Nombre del producto" required />
+        <input type="number" id="precioProducto" placeholder="Precio (USD)" required />
+        <textarea id="descripcionProducto" placeholder="Descripción" required></textarea>
+        <button type="submit" class="btn-primary">Publicar Producto</button>
+      </form>
+    </section>
+
+    <!-- INTERACCIÓN ENTRE USUARIOS - COMENTARIOS -->
+    <section class="comentarios-section">
+      <h2>Comentarios de Usuarias</h2>
+      <div id="comentarios"></div>
+      <textarea id="nuevoComentario" placeholder="Escribe un comentario..."></textarea>
+      <button id="enviarComentario" class="btn-secondary">Enviar</button>
+    </section>
+
+   
+
+
+
+    <script src="Exportify_script.js"></script>
+  </body>
+</html>
