@@ -7,7 +7,7 @@
         }
 
         body {
-            background-color: #f8f9fa;
+            background-color: #FEFBEB(255, 255, 207);
             color: #333;
             line-height: 1.6;
         }
@@ -20,8 +20,8 @@
 
         /* Header */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #9F5AA0;
+            box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
             padding: 20px 0;
             position: sticky;
             top: 0;
@@ -31,13 +31,13 @@
         .logo {
             font-size: 28px;
             font-weight: 700;
-            color: #8a2be2;
+            color: #CA92C0;
             text-align: center;
             margin-bottom: 10px;
         }
 
         .logo span {
-            color: #ff69b4;
+            color: #CA92C0;
         }
 
         .nav-links {
@@ -60,7 +60,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #8a2be2, #ff69b4);
+            background: linear-gradient(135deg, #CA92C0, #ff9cce);
             color: white;
             padding: 60px 0;
             text-align: center;
@@ -176,7 +176,7 @@
 
         /* Footer */
         footer {
-            background-color: #333;
+            background-color: #5F3C62;
             color: white;
             padding: 40px 0;
             text-align: center;
