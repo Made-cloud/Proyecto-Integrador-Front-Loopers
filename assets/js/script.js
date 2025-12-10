@@ -11,10 +11,11 @@ console.log("Exportify cargado✔");
    1. LOGIN SIMPLIFICADO
 ---------------------- */
 const loginBtn = document.getElementById("loginBtn");
-loginBtn.addEventListener("click", () => {
-  alert("Login simulado: futura integración con registro y cuentas de emprendedoras.");
-});
-
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
+    alert("Login simulado: futura integración con registro y cuentas de emprendedoras.");
+  });
+}
 
 /* ----------------------
    2. CATÁLOGO INICIAL
@@ -35,6 +36,7 @@ let productos = [
 ];
 
 function mostrarCatalogo() {
+  if (!productList) return;
   productList.innerHTML = "";
   productos.forEach((p) => {
     const card = document.createElement("div");
@@ -48,26 +50,28 @@ function mostrarCatalogo() {
   });
 }
 
-mostrarCatalogo();
+if (productList) {
+  mostrarCatalogo();
+}
 
 /* ----------------------
    3. PUBLICAR PRODUCTOS
 ---------------------- */
 const productForm = document.getElementById("productForm");
-productForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (productForm) {
+  productForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  const nombre = document.getElementById("nombreProducto").value;
-  const precio = document.getElementById("precioProducto").value;
-  const descripcion = document.getElementById("descripcionProducto").value;
+    const nombre = document.getElementById("nombreProducto").value;
+    const precio = document.getElementById("precioProducto").value;
+    const descripcion = document.getElementById("descripcionProducto").value;
 
-  productos.push({ nombre, precio, descripcion });
-  mostrarCatalogo();
+    productos.push({ nombre, precio, descripcion });
+    mostrarCatalogo();
 
-  productForm.reset();
-  alert("Producto publicado con éxito 🎉");
-});
-
+    productForm.reset();
+    alert("Producto publicado con éxito 🎉");
+  });
 /* ----------------------
    4. COMENTARIOS ENTRE USUARIAS
 ---------------------- */
@@ -78,6 +82,7 @@ const nuevoComentario = document.getElementById("nuevoComentario");
 let comentarios = [];
 
 function renderComentarios() {
+  if (!comentariosDiv) return;
   comentariosDiv.innerHTML = "";
   comentarios.forEach((c) => {
     const caja = document.createElement("p");
@@ -86,18 +91,27 @@ function renderComentarios() {
   });
 }
 
-enviarComentario.addEventListener("click", () => {
-  if (nuevoComentario.value.trim() === "") return alert("Escribe un comentario, comadre 💅");
+if (enviarComentario && nuevoComentario) {
+  enviarComentario.addEventListener("click", () => {
+    if (nuevoComentario.value.trim() === "") return alert("Escribe un comentario, comadre 💅");
 
-  comentarios.push(nuevoComentario.value);
-  nuevoComentario.value = "";
-  renderComentarios();
-});
-
+    comentarios.push(nuevoComentario.value);
+    nuevoComentario.value = "";
+    renderComentarios();
+  });
+}uevoComentario.value = "";
 /* ----------------------
    5. BOTÓN 'VER CATÁLOGO'
 ---------------------- */
 const verCatalogoBtn = document.getElementById("verCatalogoBtn");
+if (verCatalogoBtn) {
+  verCatalogoBtn.addEventListener("click", () => {
+    const catalogoSection = document.getElementById("catalogo");
+    if (catalogoSection) {
+      catalogoSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+}st verCatalogoBtn = document.getElementById("verCatalogoBtn");
 verCatalogoBtn.addEventListener("click", () => {
   document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
 });
