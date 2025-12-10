@@ -209,8 +209,25 @@ body {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /* CAMBIO: Esto obliga a tener exactamente 3 columnas del mismo ancho */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
+    justify-content: center;
+}
+
+/* IMPORTANTE: Ajuste para celulares (para que no se vean 3 minicolumnas apretadas) */
+@media (max-width: 900px) {
+    .team-grid {
+        /* En tablets bajamos a 2 columnas */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        /* En celulares bajamos a 1 columna */
+        grid-template-columns: 1fr; 
+    }
 }
 
 .team-card {
