@@ -111,7 +111,8 @@ if (verCatalogoBtn) {
       catalogoSection.scrollIntoView({ behavior: "smooth" });
     }
   });
-}st verCatalogoBtn = document.getElementById("verCatalogoBtn");
+} verCatalogoBtn = document.getElementById("verCatalogoBtn");
 verCatalogoBtn.addEventListener("click", () => {
   document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
 });
+}
