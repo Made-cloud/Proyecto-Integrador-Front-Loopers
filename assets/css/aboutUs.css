@@ -89,7 +89,7 @@ body {
     min-width: 300px;
 }
 
-/* Animación de pulso */
+/* Animación de pulso existente */
 @keyframes latido {
     0% { transform: scale(1); }
     15% { transform: scale(1.05); color: var(--highlight); }
@@ -155,6 +155,12 @@ body {
     font-size: 1.5rem;
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
+}
+
+.icon-value {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
 .values-list {
@@ -276,4 +282,104 @@ body {
     .hero h1 {
         font-size: 2rem;
     }
+}
+
+/* =========================================
+   8. NUEVOS ESTILOS (Proyecto & Animación)
+   ========================================= */
+
+/* Estilos para la nueva sección de proyecto */
+.project-info {
+    padding: 3rem 2rem;
+    background-color: var(--white);
+    text-align: center;
+    margin-bottom: 80px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.project-info h2 {
+    color: var(--dark-purple);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.project-grid h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Animación de entrada (Fade In Up) */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Retrasos para efecto cascada */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Estilos para Redes Sociales */
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #9F5AA0; /* Tu color primario */
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #8a2be2; /* Tu color de acento */
+    transform: scale(1.2); /* Efecto de crecimiento */
+}
+
+
+.tech-stack {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.tech-icons i {
+    font-size: 3rem;
+    color: #ccc; /* Gris inicial */
+    transition: all 0.3s ease;
+}
+
+/* Efecto colorido al pasar el mouse */
+.tech-icons i:hover {
+    color: #9F5AA0;
+    transform: translateY(-10px);
 }
