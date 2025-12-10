@@ -224,11 +224,12 @@ header {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .product-card h3 {
@@ -312,7 +313,8 @@ header {
 }
 
 .btn-secondary:hover {
-    background: #083d77;
+    background: #ff9cce;
+    color: #083d77;
 }
 
 .btn-login {
@@ -328,6 +330,120 @@ header {
 
 .btn-login:hover {
     background: #083d77;
+}
+
+/* ==========================
+   ANIMAÇÕES DE CARDS E HOVER
+========================== */
+.value-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #ff9cce;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+}
+
+.value-card h3 {
+    color: #083d77;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.icon-value {
+    font-size: 2rem;
+    color: #083d77;
+    margin-bottom: 15px;
+}
+
+/* Team Cards */
+.team-card {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-bottom: 4px solid #ff9cce;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #083d77;
+}
+
+.team-card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2rem;
+    color: #083d77;
+}
+
+.team-card .role {
+    color: #6384a6;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.team-card .bio {
+    color: #78647d;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #083d77;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #ff9cce;
+    transform: scale(1.2);
+}
+
+/* Tech Stack Icons */
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.tech-icons i {
+    font-size: 3rem;
+    color: #f189bd;
+    transition: all 0.3s ease;
+}
+
+.tech-icons i:hover {
+    color: #083d77;
+    transform: translateY(-10px);
 }
 
 /* ==========================

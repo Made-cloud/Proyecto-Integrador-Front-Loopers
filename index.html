@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exportify - Emprendedoras al Mundo</title>
     <link rel="stylesheet" href="/assets/css/unified.css" />
+    <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
     <script src="/assets/js/script.js"></script>
   </head>
   <body>
@@ -15,7 +16,7 @@
         <nav class="nav-links">
           <a href="#home">INICIO </a>
           <a href="pages/aboutUs.html">SOBRE NOSOTROS</a>
-          <a href="#catalogo">CATÁLOGO</a>
+          <a href="#">CATÁLOGO</a>
           <a href="#ofrecer">PRODUCTO</a>
           <a href="#">CAPACITACIÓN</a>
           <a href="#">SEGUIMIENTO</a>
@@ -25,20 +26,20 @@
     </header>
 
     <!-- HERO -->
-    <section id="home" class="hero">
+    <section id="home" class="hero fade-in-up">
       <h1>Vende tus productos al mundo</h1>
       <p>Plataforma creada para mujeres emprendedoras chilenas que quieren llegar al mercado internacional.</p>
       <button class="btn-primary" id="verCatalogoBtn">Ver Catálogo</button>
     </section>
 
     <!-- CATÁLOGO -->
-    <section id="catalogo" class="catalog-section">
+    <section id="catalogo" class="catalog-section fade-in-up" style="animation-delay: 0.2s;">
       <h2>Catálogo Internacional</h2>
       <div id="productList" class="catalog-grid"></div>
     </section>
 
     <!-- FORMULARIO PARA OFRECER PRODUCTO -->
-    <section id="ofrecer" class="form-section">
+    <section id="ofrecer" class="form-section fade-in-up" style="animation-delay: 0.4s;">
       <h2>Ofrecer Producto</h2>
       <form id="productForm" class="product-form">
         <input type="text" id="nombreProducto" placeholder="Nombre del producto" required />
@@ -49,7 +50,7 @@
     </section>
 
     <!-- INTERACCIÓN ENTRE USUARIOS - COMENTARIOS -->
-    <section class="comentarios-section">
+    <section class="comentarios-section fade-in-up" style="animation-delay: 0.6s;">
       <h2>Comentarios de Usuarias</h2>
       <div id="comentarios"></div>
       <textarea id="nuevoComentario" placeholder="Escribe un comentario..."></textarea>
