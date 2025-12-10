@@ -15,3 +15,13 @@ fetch(basePath + 'components/navbar.html')
     .then(data => {
         document.getElementById('navbar').innerHTML = data;
     });
+
+// 3. Cargar el Footer
+fetch(basePath + 'components/footer.html')
+    .then(response => {
+        if (!response.ok) throw new Error("No se encontró el footer");
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
