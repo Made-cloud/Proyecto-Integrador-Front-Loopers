@@ -89,362 +89,234 @@
 /* ==========================
    HERO SECTION
 ========================== */
-.section {
-    padding: 60px 20px;
+/* ==========================
+   VARIABLES Y RESET
+========================== */
+:root {
+  --color-bg: #f4f2fa;
+  --color-surface: #ffffff;
+  --color-surface-soft: #faf7ff;
+
+  --color-text-main: #1f1630;
+  --color-text-muted: #6b6275;
+
+  --color-primary: #0b4f8f;      /* Azul exportify */
+  --color-primary-soft: #e0edff;
+
+  --color-accent: #7a4bff;       /* Morado botones */
+  --color-accent-hover: #6432f7;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+
+  --shadow-sm: 0 10px 25px rgba(0,0,0,0.08);
+  --shadow-md: 0 14px 35px rgba(0,0,0,0.12);
 }
 
-.contanier-hero {
-    text-align: center;
-    color: white;
-    padding: 70px 20px;
-    margin-bottom: 50px;
-    background: linear-gradient(135deg, #f5ea59, #f189bd);
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.contanier-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.6rem;
-}
-
-.contanier-hero p {
-    font-size: 1.1rem;
-    color: #5a4d5f;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.section--light {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: var(--border-radius);
-    margin: 20px;
-    padding: 40px 20px;
-}
-
-.container_curso{
-    text-align: center;
-    color: black;
+/* Asegura que TODO el CSS solo afecte al catálogo */
+.catalogo-body {
+  font-family: system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text-main);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
 }
 
 /* ==========================
-   SECCIÓN CURSOS
+   HERO CATÁLOGO
 ========================== */
-.section_header {
-    text-align: center;
-    margin-bottom: 30px;
+.catalogo-body .hero--catalogo {
+  padding: 96px 20px 72px;
+  background: radial-gradient(circle at top left, #ffe7c0, #f9d1ff);
 }
 
-.section_header--center {
-    text-align: center;
+.catalogo-body .hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.section_header h2 {
-    font-size: 2rem;
-    color: #371a1a;
-    margin-bottom: 15px;
+.catalogo-body .hero__title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
 }
 
-.section_header + p {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    color: #5a4d5f;
-    font-size: 1.1rem;
+.catalogo-body .hero__subtitle {
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: var(--color-text-muted);
+}
+
+/* CTA del hero */
+.catalogo-body .hero__cta {
+  display: inline-block;
+  padding: 12px 26px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(122,75,255,0.35);
+}
+
+.catalogo-body .hero__cta:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
 }
 
 /* ==========================
-   CATÁLOGO DE CURSOS
+   SECCIONES GENERALES
 ========================== */
-.catalogo-row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
+.catalogo-body .section {
+  padding: 72px 20px;
 }
 
-.card {
-    width: 320px;
-    background: var(--color-card);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--sombra-card);
-    transition: all 0.35s ease;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    display: flex;
-    flex-direction: column;
+.catalogo-body .section--light {
+  background: var(--color-surface);
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 48px 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+.catalogo-body .section__header {
+  text-align: center;
+  margin-bottom: 28px;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+.catalogo-body .section__title {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.card-body {
-    padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #371a1a;
-    margin-bottom: 12px;
-}
-
-.card-text {
-    font-size: 0.95rem;
-    color: #5a4d5f;
-    margin-bottom: 15px;
-    line-height: 1.5;
-    flex-grow: 1;
-}
-
-.card-text:last-of-type {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primario);
-    margin-top: auto;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: var(--color-boton);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.btn-primary {
-    background-color: var(--color-boton);
-}
-
-.btn-primary:hover {
-    background-color: #5a32a3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
+.catalogo-body .section__subtitle {
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 10px auto 0;
 }
 
 /* ==========================
-   FOOTER
+   GRID DEL CATÁLOGO
 ========================== */
-.site-footer {
-    background:#083d77;
-    color: white;
-    padding: 40px 0 20px;
-    margin-top: auto;
+.catalogo-body .catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
 }
 
-.footer__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 0 20px;
+/* ==========================
+   CARDS
+========================== */
+.catalogo-body .card {
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: 0.25s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
 }
 
-.footer__brand {
-    flex: 1;
-    min-width: 250px;
+.catalogo-body .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(96,165,250,0.4);
 }
 
-.logo__icon {
-    font-size: 32px;
-    display: block;
-    margin-bottom: 10px;
+.catalogo-body .card__image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
 
-.logo__title {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--color-blanco);
-    display: block;
-    margin-bottom: 10px;
+.catalogo-body .card__body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 
-.footer__brand p {
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    line-height: 1.7;
+.catalogo-body .card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.footer__links {
-    flex: 1;
-    min-width: 200px;
-    list-style: none;
+.catalogo-body .card__description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
 }
 
-.footer__links li {
-    margin-bottom: 12px;
+.catalogo-body .card__price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: auto;
 }
 
-.footer__links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    transition: all 0.3s;
-    font-size: 0.95rem;
-    display: inline-block;
-    padding: 5px 0;
+/* ==========================
+   BOTÓN DE CARDS (sin afectar navbar)
+========================== */
+.catalogo-body .card__btn {
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  transition: 0.25s ease;
 }
 
-.footer__links a:hover {
-    color: var(--color-hover);
-    transform: translateX(5px);
+.catalogo-body .card__btn:hover {
+  background: #063a6b;
+  transform: translateY(-2px);
 }
 
-.footer__social {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer__social p {
-    color: var(--color-blanco);
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.social-list {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.social-list a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: #cbd5e1;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.social-list a:hover {
-    background-color: var(--color-hover);
-    color: white;
-    transform: translateY(-3px);
-}
-
-.footer__bottom {
-    margin-top: 40px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    font-size: 0.9rem;
-    color: #94a3b8;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
+/* ==========================
+   FOOTER (solo estilo interno)
+========================== */
+.catalogo-body .site-footer {
+  margin-top: auto;
 }
 
 /* ==========================
    RESPONSIVE
 ========================== */
-@media (max-width: 992px) {
-    .footer__inner {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .footer__brand,
-    .footer__links,
-    .footer__social {
-        min-width: 100%;
-        text-align: center;
-    }
-    
-    .social-list {
-        justify-content: center;
-    }
-}
-
 @media (max-width: 768px) {
-    .nav-links {
-        gap: 15px;
-    }
-    
-    .nav-links a {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-    
-    .contanier-hero h1 {
-        font-size: 2rem;
-    }
-    
-    .section_header h2 {
-        font-size: 1.7rem;
-    }
-    
-    .catalogo-row {
-        gap: 20px;
-        padding: 10px;
-    }
-    
-    .card {
-        width: 100%;
-        max-width: 350px;
-    }
+  .catalogo-body .section--light {
+    margin-inline: 16px;
+    padding: 32px 20px;
+  }
+
+  .catalogo-body .card__image {
+    height: 170px;
+  }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 24px;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .contanier-hero h1 {
-        font-size: 1.7rem;
-    }
-    
-    .contanier-hero {
-        padding: 30px 15px;
-    }
-    
-    .section {
-        padding: 40px 15px;
-    }
-    
-    .section--light {
-        margin: 10px;
-        padding: 30px 15px;
-    }
+  .catalogo-body .hero__title {
+    font-size: 1.7rem;
+  }
+
+  .catalogo-body .catalogo-grid {
+    gap: 20px;
+  }
 }
