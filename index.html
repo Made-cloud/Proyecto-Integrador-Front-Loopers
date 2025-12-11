@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exportify - Emprendedoras al Mundo</title>
+    <link rel="stylesheet" href="/assets/css/unified.css" />
+    <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <div class="logo">EXPORTI<span>FY</span></div>
+        <nav class="nav-links">
+          <a href="#home">INICIO </a>
+          <a href="pages/aboutUs.html">SOBRE NOSOTROS</a>
+          <a href="pages/Catalogo.html">CATÁLOGO</a>
+          <a href="pages/noticias.html">NOTICIAS</a>
+          <a href="#">CAPACITACIÓN</a>
+          <a href="#">SEGUIMIENTO</a>
+          <a href="pages/contacto.html">CONTÁCTENOS</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero fade-in-up">
+      <h1>Vende tus productos al mundo</h1>
+      <p>Plataforma creada para mujeres emprendedoras chilenas que quieren llegar al mercado internacional.</p>
+      <button class="btn-primary" id="verCatalogoBtn">Ver Catálogo</button>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="catalog-section fade-in-up" style="animation-delay: 0.2s;">
+      <h2>Catálogo Internacional</h2>
+      <div id="productList" class="catalog-grid"></div>
+    </section>
+
+    <!-- FORMULARIO PARA OFRECER PRODUCTO -->
+    <section id="ofrecer" class="form-section fade-in-up" style="animation-delay: 0.4s;">
+      <h2>Ofrecer Producto</h2>
+      <form id="productForm" class="product-form">
+        <input type="text" id="nombreProducto" placeholder="Nombre del producto" required />
+        <input type="number" id="precioProducto" placeholder="Precio (USD)" required />
+        <textarea id="descripcionProducto" placeholder="Descripción" required></textarea>
+        <button type="submit" class="btn-primary">Publicar Producto</button>
+      </form>
+    </section>
+
+    <!-- INTERACCIÓN ENTRE USUARIOS - COMENTARIOS -->
+    <section class="comentarios-section fade-in-up" style="animation-delay: 0.6s;">
+      <h2>Comentarios de Usuarias</h2>
+      <div id="comentarios"></div>
+      <textarea id="nuevoComentario" placeholder="Escribe un comentario..."></textarea>
+      <button id="enviarComentario" class="btn-secondary">Enviar</button>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>EXPORTI<span>FY</span></h3>
+          <p>Conectando emprendedores con el mundo digital.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="pages/aboutUs.html">Sobre Nosotros</a></li>
+            <li><a href="pages/contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Redes Sociales</h4>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Twitter">TW</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Exportify · Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

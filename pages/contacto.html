@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos</title>
+    <link rel="stylesheet" href="/assets/css/unified.css">
+    <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+        <div id="navbar"></div>
+
+        </div>
+    </header>
+    <!-- HERO SECTION -->
+    <section class="hero fade-in-up">
+        <div class="container">
+            <h1>CONTÁCTENOS</h1>
+            <p>Nos encantaría escuchar de ti. Envíanos tu mensaje y nos pondremos en contacto pronto.</p>
+        </div>
+    </section>
+
+    <div class="container fade-in-up" style="animation-delay: 0.2s;">
+        <div class="contact-form-container fade-in-up">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="inputName">Nombre</label>
+                    <input type="text" id="inputName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputEmail">Correo electrónico</label>
+                    <input type="email" id="inputEmail" placeholder="ejemplo@dominio.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputPhone">Teléfono (opcional)</label>
+                    <input type="tel" id="inputPhone" placeholder="Ex: 9 9876 5432" maxlength="12">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputMessage">Mensaje</label>
+                    <textarea id="inputMessage" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>EXPORTI<span>FY</span></h3>
+          <p>Conectando emprendedores con el mundo digital.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="aboutUs.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Redes Sociales</h4>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Twitter">TW</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Exportify · Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+        // Lógica de teléfono e envío del formulario
+        const phoneInput = document.getElementById('inputPhone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(event) {
+                let value = event.target.value.replace(/\D/g, '');
+                if (value.length > 0 && value[0] !== '9') {
+                    value = '9' + value;
+                }
+                if (value.length > 1) {
+                    value = value.substring(0, 1) + ' ' + value.substring(1);
+                }
+                if (value.length > 6) {
+                    value = value.substring(0, 6) + ' ' + value.substring(6);
+                }
+                event.target.value = value;
+            });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('inputName').value;
+            const email = document.getElementById('inputEmail').value;
+            const message = document.getElementById('inputMessage').value;
+
+            if (name && email && message) {
+                alert('¡Gracias! Su mensaje ha sido enviado exitosamente.');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Por favor, complete todos los campos obligatorios (Nombre, Correo electrónico y Mensaje).');
+            }
+        });
+    </script>
+    <div id="footer"></div>
+    <script src="../assets/js/layout.js"></script>
+</body>
+</html>

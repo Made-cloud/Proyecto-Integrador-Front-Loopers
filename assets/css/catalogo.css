@@ -1,0 +1,322 @@
+/* ==========================
+   VARIABLES Y RESET
+========================== */
+:root {
+    --color-fondo: #efeaf5;
+    --color-texto: #78647d;
+    --color-primario: #1c66b5;
+    --color-secundario: #ff9cce;
+    --color-card: #dcc0ff;
+    --color-blanco: #ffffff;
+    --color-hover: #ff9cce;
+    --color-boton: #6f42c1;
+    --sombra: 0 2px 10px rgba(7, 7, 7, 0.1);
+    --sombra-card: 0 6px 18px rgba(0, 0, 0, 0.5);
+    --border-radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.catalogo-body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================
+   HEADER Y NAVEGACIÓN
+========================== */
+.container {
+    background-color: #083d77;
+    box-shadow: var(--sombra);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--color-secundario);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-weight: 500;
+    transition: all 0.3s;
+    letter-spacing: 0.05em;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: var(--color-hover);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+/* ==========================
+   VARIABLES Y RESET
+========================== */
+:root {
+  --color-bg: #f4f2fa;
+  --color-surface: #ffffff;
+  --color-surface-soft: #faf7ff;
+
+  --color-text-main: #1f1630;
+  --color-text-muted: #6b6275;
+
+  --color-primary: #0b4f8f;      /* Azul exportify */
+  --color-primary-soft: #e0edff;
+
+  --color-accent: #7a4bff;       /* Morado botones */
+  --color-accent-hover: #6432f7;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+
+  --shadow-sm: 0 10px 25px rgba(0,0,0,0.08);
+  --shadow-md: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegura que TODO el CSS solo afecte al catálogo */
+.catalogo-body {
+  font-family: system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text-main);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ==========================
+   HERO CATÁLOGO
+========================== */
+.catalogo-body .hero--catalogo {
+  padding: 96px 20px 72px;
+  background: radial-gradient(circle at top left, #ffe7c0, #f9d1ff);
+}
+
+.catalogo-body .hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.catalogo-body .hero__title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.catalogo-body .hero__subtitle {
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: var(--color-text-muted);
+}
+
+/* CTA del hero */
+.catalogo-body .hero__cta {
+  display: inline-block;
+  padding: 12px 26px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(122,75,255,0.35);
+}
+
+.catalogo-body .hero__cta:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   SECCIONES GENERALES
+========================== */
+.catalogo-body .section {
+  padding: 72px 20px;
+}
+
+.catalogo-body .section--light {
+  background: var(--color-surface);
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 48px 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.catalogo-body .section__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.catalogo-body .section__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.catalogo-body .section__subtitle {
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 10px auto 0;
+}
+
+/* ==========================
+   GRID DEL CATÁLOGO
+========================== */
+.catalogo-body .catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+/* ==========================
+   CARDS
+========================== */
+.catalogo-body .card {
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: 0.25s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogo-body .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(96,165,250,0.4);
+}
+
+.catalogo-body .card__image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.catalogo-body .card__body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.catalogo-body .card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.catalogo-body .card__description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.catalogo-body .card__price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: auto;
+}
+
+/* ==========================
+   BOTÓN DE CARDS (sin afectar navbar)
+========================== */
+.catalogo-body .card__btn {
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  transition: 0.25s ease;
+}
+
+.catalogo-body .card__btn:hover {
+  background: #063a6b;
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   FOOTER (solo estilo interno)
+========================== */
+.catalogo-body .site-footer {
+  margin-top: auto;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .catalogo-body .section--light {
+    margin-inline: 16px;
+    padding: 32px 20px;
+  }
+
+  .catalogo-body .card__image {
+    height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogo-body .hero__title {
+    font-size: 1.7rem;
+  }
+
+  .catalogo-body .catalogo-grid {
+    gap: 20px;
+  }
+}

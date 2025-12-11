@@ -1,0 +1,329 @@
+/* ==========================
+   ESTILOS ABOUT US - FUSIÓN FINAL
+   Colores Fijos: Azul (#083d77), Rosado (#ff9cce), Hero (Amarillo/Rosado)
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #efeaf5; /* Fondo Lila Suave */
+    color: #78647d; 
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Nota: Eliminamos los estilos de 'header' y 'footer' para que usen los archivos separados. */
+
+/* =========================================
+   1. HERO SECTION (Usando el degradado Amarillo/Rosado que señalaste)
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, #f5ea59, #f189bd); /* Degradado Amarillo/Rosado */
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.6rem;
+}
+
+/* =========================================
+   2. SECCIÓN CEO (CEO, Misión, Visión, Valores)
+   ========================================= */
+.ceo-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+}
+
+.ceo-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #083d77; /* Azul Oscuro */
+}
+
+.ceo-name {
+    font-size: 2.5rem;
+    color: #083d77; /* Azul Oscuro */
+}
+
+.ceo-title {
+    font-size: 1.2rem;
+    color: #6384a6; 
+}
+
+.ceo-quote {
+    background-color: #f0e6ff;
+    border-left: 5px solid #083d77;
+}
+
+/* Animación Latido del CEO (Necesaria si no se usa la del JS) */
+@keyframes latido {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.05); color: #ff9cce; }
+    30% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+/* === Valores/Mission/Vision === */
+.value-card {
+    background-color: #ffffff;
+    border-top: 5px solid #ff9cce; /* Borde Rosado */
+}
+
+.value-card h3 {
+    color: #083d77; /* Azul Oscuro */
+}
+
+.values-list li::before {
+    content: "•";
+    color: #ff9cce; /* Rosado */
+}
+
+/* =========================================
+   3. SECCIÓN PROYECTO (Tu estructura)
+   ========================================= */
+.project-info {
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+    text-align: center;
+    margin-bottom: 80px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.project-info h2 {
+    color: #083d77; /* Azul oscuro */
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.highlight {
+    color: #ff9cce; /* Rosado */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.project-grid h3 {
+    color: #083d77;
+}
+
+/* =========================================
+   5. SECCIÓN VALORES (Values Grid)
+   ========================================= */
+.values-section {
+    margin-bottom: 80px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #ff9cce; /* Borde rosado */
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+}
+
+.value-card h3 {
+    color: #083d77;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.icon-value {
+    font-size: 2rem;
+    color: #083d77;
+    margin-bottom: 15px;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.values-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.values-list li::before {
+    content: "•";
+    color: #ff9cce;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+}
+
+/* =========================================
+   5. SECCIÓN EQUIPO (Team Grid)
+   ========================================= */
+.team-section {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    color: #083d77;
+    margin-bottom: 10px;
+}
+
+.team-subtitle {
+    color: #6384a6;
+    margin-bottom: 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .team-grid { grid-template-columns: 1fr; }
+}
+
+.team-card {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-bottom: 4px solid #ff9cce;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #083d77;
+}
+
+.team-card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2rem;
+    color: #083d77;
+}
+
+.team-card .role {
+    color: #6384a6;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.social-links a {
+    color: #083d77;
+    font-size: 1.5rem;
+    margin: 0 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff9cce;
+    transform: scale(1.2);
+}
+
+
+/* =========================================
+   6. SECCIÓN STACK TECNOLÓGICO
+   ========================================= */
+.tech-stack {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.tech-icons i {
+    font-size: 3rem;
+    color:   #f189bd;
+    transition: all 0.3s ease;
+}
+
+.tech-icons i:hover {
+    color: #083d77;
+    transform: translateY(-10px);
+}
+
+/* =========================================
+   7. ANIMACIONES (Fade In Up)
+   ========================================= */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
