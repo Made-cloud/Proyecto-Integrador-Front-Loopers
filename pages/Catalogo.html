@@ -10,97 +10,120 @@
 
 <body class="catalogo-body">
 
-    <header>
+    <header class="site-header">
         <div id="navbar"></div>
-<section class="section">
-    <div class="contanier-hero">
-        <h2>Catálogo de herramientas para Exportar </h2>
-        <p>
-            Explora nuestos prodcutos, certificaciones, cursos y recursos para explorar nuevos mercados. 
-        </p>
-    </div>
-</section>
+    </header>
 
-<section class="section section--light">
-    <div class="container_curso">
-        <header class="section_curso">
-        <h2>Nuestos Cursos</h2>
-        </header>
-        <p>
-            Todo lo que necesitas saber acerca de nuestros cursos y certificaciones
-        </p>   
-    </div>
-    <div class="catalogo-row">
+    <main>
 
-        <div class="card">
-            <img src="../assets/images/exportacion.jpg" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Normas para Exportar</h5>
-                <p class="card-text">Aprende a exportar en pasos simples con guías claras y aplicables.</p>
-                <p class="card-text">$50.000</p>
-                <a href="#" class="btn btn-primary">Ver curso</a>
+        <!-- HERO CATÁLOGO -->
+        <section class="hero hero--catalogo">
+            <div class="hero__content">
+                <h1 class="hero__title">Catálogo de herramientas para exportar</h1>
+                <p class="hero__subtitle">
+                    Explora nuestros productos, certificaciones, cursos y recursos para llegar a nuevos mercados.
+                </p>
+                <a href="#catalogo-cursos" class="btn btn-primary hero__cta">Ver cursos disponibles</a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CATÁLOGO -->
+        <section class="section section--light" id="catalogo-cursos">
+            <header class="section__header">
+                <h2 class="section__title">Nuestros cursos</h2>
+                <p class="section__subtitle">
+                    Todo lo que necesitas saber acerca de nuestros cursos y certificaciones.
+                </p>
+            </header>
+
+            <div class="catalogo-grid">
+
+                <!-- CARD 1 -->
+                <article class="card curso-card">
+                    <img src="../assets/images/exportacion.jpg"
+                         class="card__image"
+                         alt="Curso de normas para exportar">
+                    <div class="card__body">
+                        <h3 class="card__title">Normas para exportar</h3>
+                        <p class="card__description">
+                            Aprende a exportar en pasos simples con guías claras y aplicables.
+                        </p>
+                        <p class="card__price">$50.000</p>
+                        <a href="#" class="btn btn-secondary card__btn">Ver curso</a>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="card curso-card">
+                    <img src="../assets/images/certificaciones.jpg"
+                         class="card__image"
+                         alt="Curso de certificaciones para exportar">
+                    <div class="card__body">
+                        <h3 class="card__title">Certificaciones</h3>
+                        <p class="card__description">
+                            Conoce las certificaciones necesarias para exportar tus productos a nuevos mercados.
+                        </p>
+                        <p class="card__price">$45.000</p>
+                        <a href="#" class="btn btn-secondary card__btn">Ver curso</a>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="card curso-card">
+                    <img src="../assets/images/marketing.png"
+                         class="card__image"
+                         alt="Curso de marketing digital">
+                    <div class="card__body">
+                        <h3 class="card__title">Marketing digital</h3>
+                        <p class="card__description">
+                            Estrategias para posicionar tu marca en mercados globales.
+                        </p>
+                        <p class="card__price">$35.000</p>
+                        <a href="#" class="btn btn-secondary card__btn">Ver curso</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER ÚNICO -->
+    <footer class="site-footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <span class="logo__icon">🌍</span>
+                <span class="logo__title">Exportify</span>
+                <p>De tu tienda local al mundo.</p>
+            </div>
+
+            <nav aria-label="Enlaces de footer">
+                <ul class="footer__links">
+                    <li><a href="#sobre">Sobre el proyecto</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__social">
+                <p>Síguenos</p>
+                <ul class="social-list">
+                    <li><a href="#" aria-label="Instagram">IG</a></li>
+                    <li><a href="#" aria-label="LinkedIn">IN</a></li>
+                    <li><a href="#" aria-label="YouTube">YT</a></li>
+                </ul>
             </div>
         </div>
 
-        <div class="card">
-            <img src="../assets/images/certificaciones.jpg" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Certificaciones</h5>
-                <p class="card-text">Aprende las certificaciones necesarias para exportar tus productos a nuevos mercados.</p>
-                <p class="card-text">$45.000</p>
-                <a href="#" class="btn btn-primary">Ver curso</a>
-            </div>
+        <div class="footer__bottom">
+            <p>&copy; <span id="year"></span> Exportify. Todos los derechos reservados.</p>
         </div>
+    </footer>
 
-        <div class="card">
-            <img src="../assets/images/marketing.png" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Marketing digital</h5>
-                <p class="card-text">Estrategias para posicionar tu marca en mercados globales.</p>
-                <p class="card-text">$35.000</p>
-                <a href="#" class="btn btn-primary">Ver curso</a>
-            </div>
-        </div>
-
-    </div> 
-
-</section>
-   
-    <div id="footer"></div>
+    <!-- JS global de layout (navbar) -->
     <script src="../assets/js/layout.js"></script>
+
+    <!-- Bootstrap (si lo necesitas) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-<footer class="site-footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <span class="logo__icon">🌍</span>
-        <span class="logo__title">Exportify</span>
-        <p>De tu tienda local al mundo.</p>
-      </div>
-
-      <nav aria-label="Enlaces de footer">
-        <ul class="footer__links">
-          <li><a href="#sobre">Sobre el proyecto</a></li>
-          <li><a href="#beneficios">Beneficios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-
-      <div class="footer__social">
-        <p>Síguenos</p>
-        <ul class="social-list">
-          <li><a href="#" aria-label="Instagram">IG</a></li>
-          <li><a href="#" aria-label="LinkedIn">IN</a></li>
-          <li><a href="#" aria-label="YouTube">YT</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <p>&copy; <span id="year"></span> MujerGlobal. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/catalogo.js"></script>
-
-
 </html>
