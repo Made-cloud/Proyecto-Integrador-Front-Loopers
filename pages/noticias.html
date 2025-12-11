@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Exportify</title>
+    <link rel="stylesheet" href="../assets/css/noticias.css">
+    
+</head>
+<div id="navbar"></div>
+
+  <main class="container">
+    <header class="page-header">
+      <h1 class="page-title">Noticias</h1>
+      <p class="page-subtitle">Mantente al día con las últimas novedades de Exportify y el mundo del comercio internacional</p>
+    </header>
+
+    <section class="news-filters">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="exportify">Exportify</button>
+      <button class="filter-btn" data-filter="comercio">Comercio</button>
+      <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+    </section>
+
+    <section class="news-grid" id="newsGrid">
+        <!-- Las noticias se cargarán aquí dinámicamente -->
+    </section>
+
+    <section class="load-more-container">
+      <button class="load-more-btn" id="loadMoreBtn">Cargar más noticias</button>
+    </section>
+  </main>
+</body>
+<div id="footer"></div>
+<script src="../assets/js/noticias.js"></script>
+<script src="../assets/js/layout.js"></script>
+
+</html>
