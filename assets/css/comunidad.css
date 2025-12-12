@@ -1,0 +1,164 @@
+/* Reseteo para quitar el borde blanco por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--lila-bg); /* Aseguramos que el fondo cubra todo */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --azul: #083d77;
+    --rosado: #ff9cce;
+    --lila-bg: #efeaf5;
+}
+
+/* 1. GRID PRINCIPAL */
+.comunidad-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Móvil por defecto */
+    grid-template-areas: 
+        "centro"  /* Búsqueda y posts primero en móvil */
+        "der"     /* Perfil segundo */
+        "izq";    /* Tendencias al final */
+}
+
+@media (min-width: 992px) {
+    .comunidad-grid {
+        /* Izq (220px) - Centro (Flexible) - Der (250px) */
+        grid-template-columns: 220px 1fr 250px;
+        grid-template-areas: "izq centro der";
+    }
+}
+
+.sidebar-izq { grid-area: izq; display: flex; flex-direction: column; gap: 20px; }
+.feed-central { grid-area: centro; }
+.sidebar-der { grid-area: der; display: flex; flex-direction: column; gap: 20px;}
+
+/* 2. ESTILOS DE COMPONENTES */
+
+/* 2. ESTILO EXPORTIFY (El diseño visual) */
+.exportify-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--rosado); /* Tu borde característico */
+}
+
+/* Estilo específico para la foto del post */
+.avatar-post {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    object-fit: cover; /* Evita que la foto se deforme si no es cuadrada */
+    border: 2px solid var(--rosado); /* El borde rosado que tenías en mente */
+}
+
+/* Ajuste opcional para alinear el texto al lado de la foto pequeña */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre la foto y el nombre */
+}
+/* Caritas (Grid pequeña de seguidores) */
+.grid-caritas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.grid-caritas img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.grid-caritas img:hover { transform: scale(1.2); }
+.more-count {
+    width: 35px; height: 35px;
+    background: #e0d4fc;
+    color: var(--azul);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: bold;
+}
+
+/* Barra de Búsqueda (Estilo Pill) */
+.search-bar-container {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    border: 1px solid #e0d4fc;
+}
+.search-bar-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: var(--azul);
+}
+
+/* Perfil Card (Francisco) */
+.perfil-card {
+    text-align: center;
+    padding: 0; /* Reseteo padding para manejar la imagen de fondo */
+    overflow: hidden;
+}
+.bg-pattern {
+    height: 60px;
+    background: linear-gradient(135deg, #f5ea59, #f189bd);
+}
+.avatar-grande {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-top: -45px; /* Sube la imagen para que pise el fondo */
+    object-fit: cover;
+}
+.perfil-card h3 { color: var(--azul); margin-top: 10px; font-size: 1.1rem; }
+.perfil-card .role { font-size: 0.9rem; color: #888; margin-bottom: 15px; }
+
+.botones-perfil {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.btn-outline {
+    background: transparent; border: 2px solid var(--azul);
+    color: var(--azul); padding: 5px; border-radius: 20px;
+    cursor: pointer; font-weight: bold;
+}
+.btn-outline:hover { background: var(--azul); color: white; }
+.btn-text {
+    background: none; border: none; color: #999;
+    cursor: pointer; font-size: 0.8rem;
+}
+
+/* Botón Publicar Grande */
+.btn-full-width {
+    width: 100%;
+    background: var(--rosado);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.btn-full-width:hover { background: var(--azul); }
