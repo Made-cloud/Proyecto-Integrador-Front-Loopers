@@ -58,13 +58,44 @@ const newsData = [
     readTime: "9 min",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=400&fit=crop",
     url: "https://www.bbva.com/es/innovacion/blockchain-comercio-internacional-trazabilidad-transparencia/"
+  },
+  {
+    id: 7,
+    title: "Cómo cultivar una mentalidad emprendedora resiliente para afrontar el fracaso",
+    excerpt: "Este artículo explora por qué el fracaso y el rechazo no solo son inevitables en el camino emprendedor, sino absolutamente necesarios para desarrollar resiliencia, adaptabilidad y una mentalidad de crecimiento sostenible en el tiempo. ",
+    category: "comercio",
+    date: "2025-12-11",
+    readTime: "8 min",
+    image: "https://uddventures.udd.cl/hubfs/jorge-sanz-guerrero-mentor-udd-ventures-emprendedores-desafios-fracaso-errores-resilencia-chile.jpg",
+    url:"https://uddventures.udd.cl/blog/fracaso-y-rechazo-para-emprendedores-cultivar-una-mentalidad-resiliente",
+  },
+  {
+    id: 8,
+    title: "BCI aumentará a US$150 millones el financiamiento para startups y pymes innovadoras",
+    excerpt: "El banco presentó un conjunto de medidas orientadas a profundizar su apoyo al ecosistema emprendedor, reforzando programas y espacios diseñados para acompañar el crecimiento de startups y scaleups.",
+    category: "comercio",
+    date: "2025-12-03",
+    readTime: "8 min",
+    image: "https://www.latercera.com/resizer/v2/WZ6EOMXBZZGCPDF3ZODAHYNHWE.jpg?auth=571ba6f96bbe139bd84be285a8e5c19ce6d1ab325db7e1010d76181529cf0415&smart=true&width=990&height=557&quality=70",
+    url: "https://www.latercera.com/emprendimiento/noticia/bci-aumentara-a-us150-millones-el-financiamiento-para-startups-y-expandira-su-red-de-apoyo-en-chile-y-eeuu/",
+  },
+  {
+    id: 9,
+    title: "No temas, ¡usa ChatGPT al emprender!",
+    excerpt: "Implementar esta plataforma de avanzada tecnología en las operaciones empresariales tiene numerosas ventajas. Aquí te contamos cómo ChatGPT puede transformar tu emprendimiento..",
+    category: "tecnologia",
+    date: "2025-11-30",
+    readTime: "4 min",
+    image: "https://cdn.mos.cms.futurecdn.net/kSArVmiGReJ4zKxxhr5Bm7.jpg",
+    url: "https://www.emprende.cl/no-temas-usa-chatgpt-al-emprender/",
   }
+
 ];
 
 // Additional news for "load more"
 const additionalNews = [
   {
-    id: 7,
+    id: 10,
     title: "Exportify anuncia aplicación móvil para sus cursos",
     excerpt: "Ahora podrás acceder a todos los cursos de Exportify desde tu smartphone, facilitando el aprendizaje en cualquier lugar.",
     category: "exportify",
@@ -74,7 +105,7 @@ const additionalNews = [
     url: "https://www.google.com/"
   },
   {
-    id: 8,
+    id: 11,
     title: "El futuro del packaging sustentable en exportaciones",
     excerpt: "Las nuevas regulaciones ambientales están impulsando innovaciones en empaques ecológicos para comercio internacional.",
     category: "comercio",
@@ -84,7 +115,7 @@ const additionalNews = [
     url: "https://www.packagingeurope.com/the-future-of-sustainable-packaging-in-international-trade/"
   },
   {
-    id: 9,
+    id: 12,
     title: "Automatización de aduanas: menos tiempo, más eficiencia",
     excerpt: "Nuevos sistemas digitales están reduciendo drásticamente los tiempos de procesamiento en aduanas.",
     category: "tecnologia",
@@ -93,6 +124,7 @@ const additionalNews = [
     image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&h=400&fit=crop",
     url: "https://www.logisticsmgmt.com/article/automation_in_customs_streamlining_processes_for_international_trade"
   }
+  
 ];
 
 // State
