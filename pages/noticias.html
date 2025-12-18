@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticias - Exportify</title>
-    <link rel="stylesheet" href="../assets/css/noticias.css">
-    <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noticias - Exportify</title>
+
+  <!-- CSS de esta página -->
+  <link rel="stylesheet" href="../assets/css/noticias.css" />
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
 </head>
-<div id="navbar"></div>
 
-<main class="container">
-  <div class="page-header">
-    <h1 class="page-title">Noticias</h1>
-    <p class="page-subtitle">
-      Mantente al día con las últimas novedades de Exportify y el mundo del comercio internacional
-    </p>
-  </div>
-</main>
+<body>
+  <!-- Navbar (inyectada por layout.js) -->
+  <div id="navbar"></div>
 
+  <!-- Contenido principal -->
+  <main class="container">
+    <section class="page-header">
+      <h1 class="page-title">Noticias</h1>
+      <p class="page-subtitle">
+        Mantente al día con las últimas novedades de Exportify y el mundo del comercio internacional
+      </p>
 
-    <section class="news-filters">
-      <button class="filter-btn active" data-filter="all">Todas</button>
-      <button class="filter-btn" data-filter="exportify">Exportify</button>
-      <button class="filter-btn" data-filter="comercio">Comercio</button>
-      <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+      <div class="news-filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="exportify">Exportify</button>
+        <button class="filter-btn" data-filter="comercio">Comercio</button>
+        <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+      </div>
     </section>
 
     <section class="news-grid" id="newsGrid">
-        <!-- Las noticias se cargarán aquí dinámicamente -->
+      <!-- Las noticias se cargarán aquí dinámicamente -->
     </section>
 
     <section class="load-more-container">
-      <button class="load-more-btn" id="loadMoreBtn">Cargar más noticias</button>
+      <button class="load-more-btn" id="loadMoreBtn" type="button">Cargar más noticias</button>
     </section>
   </main>
-</body>
-<div id="footer"></div>
-<script src="../assets/js/noticias.js"></script>
-<script src="../assets/js/layout.js"></script>
 
+  <!-- Footer (inyectado por layout.js) -->
+  <div id="footer"></div>
+
+  <!-- JS -->
+  <script src="../assets/js/noticias.js"></script>
+  <script src="../assets/js/layout.js"></script>
+</body>
 </html>
