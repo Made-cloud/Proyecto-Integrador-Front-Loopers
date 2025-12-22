@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión
+    </title>
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <script src="/assets/js/login.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+</head>
+<body>
+    <!-- Navbar Fijo -->
+    <div id="navbar"></div>
+
+    <div class="container">
+        <div class="login-card">
+
+            <!-- Encabezado -->
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h1>Inicio de Sesión</h1>
+                <p class="subtitle">Autenticación con LocalStorage</p>
+            </div>
+
+            <!-- Formulario de Login -->
+            <form id="loginForm" class="login-form">
+                <!-- Campo Email -->
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> Correo Electrónico
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="usuario@ejemplo.com"
+                        required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <!-- Campo Contraseña -->
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-key"></i> Contraseña
+                    </label>
+                    <div class="password-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="Ingresa tu contraseña"
+                            required>
+                        <button type="button" id="togglePassword" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <!-- Recordarme -->
+                <div class="form-group remember">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Recordar mi sesión</label>
+                </div>
+
+                <!-- Botón de Envío -->
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </button>
+
+                <!-- Enlaces adicionales -->
+                <div class="links">
+                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                    <a href="#" class="register-link">Crear una cuenta</a>
+                </div>
+
+                <!-- Mensaje de error general -->
+                <div class="error-message general" id="generalError"></div>
+
+                <!-- Mensaje de éxito -->
+                <div class="success-message" id="successMessage"></div>
+            </form>
+
+            <!-- Información de usuarios de prueba -->
+            <div class="test-users">
+                <h3><i class="fas fa-users"></i> Usuarios de Prueba</h3>
+                <div class="users-list">
+                    <div class="user">
+                        <strong>Admin:</strong> admin@test.com / Admin123
+                    </div>
+                    <div class="user">
+                        <strong>Usuario:</strong> usuario@test.com / User123
+                    </div>
+                    <div class="user">
+                        <strong>Invitado:</strong> invitado@test.com / Guest123
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicador de estado -->
+            <div class="status">
+                <div class="status-item">
+                    <i class="fas fa-database"></i>
+                    <span id="storageStatus">LocalStorage disponible</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-user-check"></i>
+                    <span id="usersCount">Usuarios cargados: 0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+    
+     <footer>
+        <div id="navbar"></div>
+     <div><p class="time" id="currentTime"></p></div>
+     </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
