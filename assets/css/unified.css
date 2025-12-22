@@ -17,19 +17,12 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* ==========================
    HEADER
 ========================== */
 header {
     background-color: #083d77;
     box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
-    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -301,7 +294,16 @@ header {
     color: #083d77;
 }
 
+#botonSecundario {
+    align-items: center;
+    align-content: center;
+    padding: 0;
+    margin: 0;
+    padding-left: 1100px;
+}
+
 .btn-secondary {
+    align-content: center;
     background: #ff9cce;
     color: #ffffff;
     padding: 10px 18px;
