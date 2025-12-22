@@ -13,34 +13,36 @@
 <div id="navbar"></div>
 </head>
 
-<main class="container">
-  <div class="page-header">
-    <h1 class="page-title">Noticias</h1>
-    <p class="page-subtitle">
-      Mantente al día con las últimas novedades de Exportify y el mundo del comercio internacional
-    </p>
-  </div>
-</main>
+  <!-- Contenido principal -->
+  <main class="container">
+    <section class="page-header">
+      <h1 class="page-title">Noticias</h1>
+      <p class="page-subtitle">
+        Mantente al día con las últimas novedades de Exportify y el mundo del comercio internacional
+      </p>
 
-
-    <section class="news-filters">
-      <button class="filter-btn active" data-filter="all">Todas</button>
-      <button class="filter-btn" data-filter="exportify">Exportify</button>
-      <button class="filter-btn" data-filter="comercio">Comercio</button>
-      <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+      <div class="news-filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="exportify">Exportify</button>
+        <button class="filter-btn" data-filter="comercio">Comercio</button>
+        <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+      </div>
     </section>
 
     <section class="news-grid" id="newsGrid">
-        <!-- Las noticias se cargarán aquí dinámicamente -->
+      <!-- Las noticias se cargarán aquí dinámicamente -->
     </section>
 
     <section class="load-more-container">
-      <button class="load-more-btn" id="loadMoreBtn">Cargar más noticias</button>
+      <button class="load-more-btn" id="loadMoreBtn" type="button">Cargar más noticias</button>
     </section>
   </main>
-</body>
-<div id="footer"></div>
-<script src="../assets/js/noticias.js"></script>
-<script src="../assets/js/layout.js"></script>
 
+  <!-- Footer (inyectado por layout.js) -->
+  <div id="footer"></div>
+
+  <!-- JS -->
+  <script src="../assets/js/noticias.js"></script>
+  <script src="../assets/js/layout.js"></script>
+</body>
 </html>

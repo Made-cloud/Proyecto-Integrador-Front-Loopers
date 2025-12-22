@@ -1,45 +1,39 @@
-# Proyecto Integrador: **Exportify**
-## By Froont Loopers
+# 🚢 Exportify - Educación y Comunidad para Emprendedoras
 
-**Exportify** es una plataforma digital diseñada para facilitar y optimizar el proceso de exportación de productos creados por **mujeres emprendedoras de Chile** que buscan llevar sus negocios al siguiente nivel. El proyecto nace con el propósito de derribar barreras técnicas, logísticas y administrativas que normalmente dificultan la internacionalización de sus productos.
+**Desarrollado por:** Front Loopers  
+**Estado:** En desarrollo 🛠️
 
-## ¿Qué es Exportify?
+## 📄 Descripción
+**Exportify** es una plataforma web educativa y colaborativa diseñada para empoderar a **mujeres emprendedoras de Chile** que desean internacionalizar sus productos.
 
-Exportify es un ecosistema pensado para acompañar a micro y pequeñas emprendedoras en cada etapa del proceso de exportación. La plataforma integra herramientas, guías y asesorías especializadas que simplifican trámites, certificaciones y gestión de envíos, haciendo que exportar deje de ser un proceso complejo o inaccesible.
+En esta etapa, el proyecto se centra en cerrar la brecha de conocimiento. Muchas emprendedoras no exportan por falta de información clara o redes de apoyo. Exportify soluciona esto ofreciendo una **ruta de aprendizaje estructurada** y un espacio de **comunidad** donde pueden compartir experiencias y resolver dudas en conjunto.
 
-## Problema Detectado
+## 🚀 Funcionalidades Clave
+* **🎓 Academia Exportadora:** Módulos de cursos interactivos que enseñan desde los conceptos básicos de comercio exterior hasta normativas aduaneras específicas.
+* **✍️ Blog de Comunidad:** Un espacio colaborativo donde las usuarias pueden publicar artículos, compartir casos de éxito y darnos consejos mutuos.
+* **🗺️ Rutas de Aprendizaje:** Guías paso a paso sobre qué trámites y certificaciones se necesitan según el rubro del emprendimiento.
+* **📂 Recursos Descargables:** Acceso a plantillas de documentos y checklists para preparar una exportación exitosa.
 
-Muchas emprendedoras cuentan con productos de alto valor, identidad local y potencial comercial internacional, pero se enfrentan a obstáculos como:
+## 🛠️ Tecnologías Utilizadas
+Este proyecto es una **Single Page Application (SPA)** construida con tecnologías web estándar:
+* **HTML5:** Estructura semántica del contenido educativo y el blog.
+* **CSS3:** Diseño responsivo, agradable y accesible para facilitar la lectura.
+* **JavaScript (ES6+):** Lógica para la navegación dinámica, interacción en los cursos y manejo de la interfaz del blog.
 
-- Falta de conocimiento sobre normativas de exportación.
-- Dificultad para acceder a certificaciones sanitarias o de calidad.
-- Escasez de redes de apoyo logístico.
-- Costos elevados de intermediación.
-- Falta de una plataforma clara y centralizada para guiarlas.
+## 📦 Instalación y Uso
+Para visualizar el proyecto en tu entorno local:
 
-## Objetivo del Proyecto
+1.  **Clona el repositorio:**
+    ```bash
+    git clone [https://github.com/Made-cloud/Proyecto-Integrador-Front-Loopers.git](https://github.com/Made-cloud/Proyecto-Integrador-Front-Loopers.git)
+    ```
+2.  **Navega a la carpeta del proyecto:**
+    ```bash
+    cd Proyecto-Integrador-Front-Loopers
+    ```
+3.  **Ejecuta el proyecto:**
+    * Puedes abrir el archivo `index.html` directamente en tu navegador.
+    * **Recomendado:** Usa la extensión **Live Server** de VS Code para una mejor experiencia de navegación.
 
-El objetivo central de Exportify es **empoderar a mujeres emprendedoras**, entregándoles una herramienta accesible, moderna y educativa para que puedan transformar sus negocios y posicionar sus productos en mercados internacionales.
-
-## ¿Cómo Funciona?
-
-Exportify ofrece:
-
-- **Guías paso a paso** sobre trámites, certificaciones y documentación.
-- **Asesoría automatizada** basada en el tipo de producto.
-- **Conexiones con empresas logísticas** y redes de envío.
-- **Plantillas de documentos** y recursos descargables.
-- **Panel de seguimiento** para monitorear el avance del proceso.
-- **Marketplace** para visibilizar productos exportables a compradores globales.
-
-## Impacto Esperado
-
-- Generar más oportunidades económicas para mujeres.
-- Aumentar la presencia de productos chilenos en el extranjero.
-- Reducir la brecha digital y exportadora en sectores vulnerables.
-- Impulsar la autonomía financiera y el crecimiento sostenible.
-
-## Conclusión
-
-Exportify no es solo una plataforma: es una herramienta de transformación social y económica. Al simplificar el proceso de exportación, abre caminos para que más mujeres puedan competir globalmente con confianza, profesionalismo y apoyo.
-
+## 👥 Equipo "Front Loopers"
+Proyecto realizado como parte del bootcamp de Desarrollo Full Stack.

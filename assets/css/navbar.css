@@ -1,44 +1,89 @@
 /* ==========================
-   NAVBAR
+   NAVBAR (SCOPED)
 ========================== */
-header {
-    background-color: #083d77;
-    box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+
+#navbar header {
+  background-color: #083d77;
+  box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
+/* CONTENEDOR */
+#navbar .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.logo span {
-    color: #ff9cce;
+/* LOGO */
+#navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0;
 }
 
-.nav-links {
-    display: flex;
+#navbar .logo img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+#navbar .logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+#navbar .logo-text span {
+  color: #ff9cce;
+}
+
+/* LINKS */
+#navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+#navbar .nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1rem;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+#navbar .nav-links a:hover {
+  color: #ff9cce;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #navbar .container {
     justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-}
+  }
 
-.nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 200;
-    transition: color 0.3s;
-    letter-spacing: 0.2rem;
-}
-
-.nav-links a:hover {
-    color: #ff9cce;
+  #navbar .nav-links {
+    justify-content: center;
+  }
 }
