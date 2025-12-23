@@ -179,7 +179,7 @@ main.container {
 .news-card {
   background-color: var(--surface);
   border-radius: var(--radius);
-  overflow: visible; /* ✅ NO cortar el botón */
+  overflow: visible; 
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   opacity: 0;
@@ -200,10 +200,71 @@ main.container {
 
 .news-card-content {
   padding: 1.5rem;
-  display: flex;              /* ✅ */
-  flex-direction: column;     /* ✅ */
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+.news-card-link {
+  margin-top: 1rem;      /* ❗ NO auto */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.news-card-link:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+.news-card-link svg {
+  transition: transform 0.3s ease;
+}
+
+.news-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+.news-card-category {
+  display: inline-block;
+  width: fit-content;
+
+  padding: 0.3rem 0.75rem;
+  margin-bottom: 0.75rem;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  border-radius: 999px;
+  background-color: rgba(26, 54, 93, 0.08);
+  color: var(--primary);
+
+  line-height: 1;
+}
+.news-card-category.exportify {
+  background-color: rgba(78, 91, 110, 0.12);
+  color: var(--primary);
+}
+.news-card-category.comercio {
+  background-color: rgba(56, 178, 172, 0.15);
+  color: var(--secondary);
+}
+.news-card-category.tecnologia {
+  background-color: rgba(237, 137, 54, 0.18);
+  color: var(--accent);
+}
+
+
+
 
 /* ==========================
    TEXTO TARJETA
