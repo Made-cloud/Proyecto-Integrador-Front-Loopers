@@ -4,7 +4,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+
   margin: 0;
   padding: 0;
 }
@@ -13,6 +13,7 @@
    VARIABLES
 ========================== */
 :root {
+  
   --primary: #1a365d;
   --primary-light: #2b4a7c;
   --secondary: #38b2ac;
@@ -39,6 +40,7 @@
    BASE
 ========================== */
 body {
+  
   font-family: 'Outfit', sans-serif;
   background-color: var(--background);
   color: var(--text-primary);
@@ -49,14 +51,63 @@ body {
    CONTENEDOR
 ========================== */
 main.container {
+  
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
 /* ==========================
-   HEADER CENTRADO (CLAVE)
+   HERO NOTICIAS (como index)
 ========================== */
+.news-hero {
+  width: 100%;
+  background: linear-gradient(135deg, #f5ea59, #f189bd);
+  padding: 3rem 0rem;
+  position: relative;
+  
+  border-bottom-left-radius: 48px;
+  border-top-right-radius: 28px;
+}
+
+
+/* Centra el contenido del hero */
+.news-hero .page-header {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Texto blanco sobre degradado */
+.news-hero .page-title {
+  color: #1a365d;
+}
+
+.news-hero .page-subtitle {
+  color: rgba(26, 54, 93, 0.75);
+}
+
+/* Filtros adaptados al hero */
+.news-hero .filter-btn {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: transparent;
+}
+
+.news-hero .filter-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.news-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255,255,255,0.25),
+    transparent 60%
+  );
+  pointer-events: none;
+}
 .page-header {
   display: flex;
   flex-direction: column;
@@ -64,21 +115,18 @@ main.container {
   text-align: center;
   gap: 1.5rem;
   margin-bottom: 3.5rem;
+  
 }
 
 /* TÍTULO */
-.page-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.6rem, 5vw, 3.6rem);
-  font-weight: 800;
-  color: var(--primary);
+.news-hero .page-title {
+  font-size: clamp(3rem, 6vw, 4rem);
+  letter-spacing: -0.03em;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
-
-/* SUBTÍTULO */
-.page-subtitle {
-  max-width: 620px;
-  font-size: 1.125rem;
-  color: var(--text-secondary);
+.news-hero .page-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.7;
 }
 
 /* ==========================
@@ -92,27 +140,29 @@ main.container {
 }
 
 .filter-btn {
-  padding: 0.6rem 1.6rem;
+  padding: 0.65rem 1.8rem;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-secondary);
-  background-color: var(--surface);
-  border: 1px solid var(--border);
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
   border-radius: 999px;
   cursor: pointer;
-  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
 }
 
 .filter-btn:hover {
-  color: var(--primary);
-  border-color: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .filter-btn.active {
   background-color: var(--primary);
   color: #ffffff;
-  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(26, 54, 93, 0.35);
 }
+
 
 /* ==========================
    GRID DE NOTICIAS
@@ -129,7 +179,7 @@ main.container {
 .news-card {
   background-color: var(--surface);
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow: visible; /* ✅ NO cortar el botón */
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   opacity: 0;
@@ -150,6 +200,9 @@ main.container {
 
 .news-card-content {
   padding: 1.5rem;
+  display: flex;              /* ✅ */
+  flex-direction: column;     /* ✅ */
+  height: 100%;
 }
 
 /* ==========================
@@ -163,8 +216,9 @@ main.container {
   line-height: 1.4;
 
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* para compatibilidad futura */
   overflow: hidden;
 }
 
@@ -175,8 +229,9 @@ main.container {
   line-height: 1.5;
 
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* para compatibilidad futura */
   overflow: hidden;
 }
 
@@ -188,6 +243,7 @@ main.container {
   justify-content: space-between;
   font-size: 0.8rem;
   color: var(--text-muted);
+  margin-bottom: 1rem;
 }
 
 /* ==========================
@@ -209,10 +265,12 @@ main.container {
   border-radius: var(--radius);
   cursor: pointer;
   transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(26, 54, 93, 0.3);
 }
 
 .load-more-btn:hover {
   background-color: var(--primary-light);
+  transform: translateY(-2px);
 }
 
 /* ==========================
@@ -237,17 +295,5 @@ main.container {
     grid-template-columns: 1fr;
   }
 }
-/* FIX ANTI-CSS VIEJO: evita que un header global pinte el header de página */
-.page-header {
-  background: transparent !important;
-  position: static !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-/* Asegura que el contenido de Noticias no sea afectado por containers globales */
-main.container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 3rem 1.5rem !important;
-}
+
 

@@ -13,30 +13,35 @@
 <div id="navbar"></div>
 </head>
 
-  <!-- Contenido principal -->
-  <main class="container">
-    <section class="page-header">
-      <h1 class="page-title">Noticias</h1>
-      <p class="page-subtitle">
-        Mantente al día con las últimas novedades de Exportify y el mundo del comercio internacional
-      </p>
 
-      <div class="news-filters">
-        <button class="filter-btn active" data-filter="all">Todas</button>
-        <button class="filter-btn" data-filter="exportify">Exportify</button>
-        <button class="filter-btn" data-filter="comercio">Comercio</button>
-        <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
-      </div>
-    </section>
+<!-- HERO -->
+<section class="news-hero">
+  <section class="page-header">
+    <h1 class="page-title">Noticias</h1>
+    <p class="page-subtitle">
+      Mantente al día con las últimas novedades de Exportify y el mundo del comercio internacional
+    </p>
 
-    <section class="news-grid" id="newsGrid">
-      <!-- Las noticias se cargarán aquí dinámicamente -->
-    </section>
+    <div class="news-filters">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="exportify">Exportify</button>
+      <button class="filter-btn" data-filter="comercio">Comercio</button>
+      <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+    </div>
+  </section>
+</section>
 
-    <section class="load-more-container">
-      <button class="load-more-btn" id="loadMoreBtn" type="button">Cargar más noticias</button>
-    </section>
-  </main>
+<!-- CONTENIDO -->
+<main class="container">
+  <section class="news-grid" id="newsGrid"></section>
+
+  <section class="load-more-container">
+    <button class="load-more-btn" id="loadMoreBtn" type="button">
+      Cargar más noticias
+    </button>
+  </section>
+</main>
+
 
   <!-- Footer (inyectado por layout.js) -->
   <div id="footer"></div>
