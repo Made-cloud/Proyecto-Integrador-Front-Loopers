@@ -1,11 +1,6 @@
-/* ==========================
-   NAVBAR (SCOPED)
-========================== */
-
 #navbar header {
   background-color: #083d77;
-  box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
-  padding: 20px 0;
+  padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -13,15 +8,15 @@
 
 /* CONTENEDOR */
 #navbar .container {
-  max-width: 1100px;
+  max-width: 1200px; /* 👈 más aire */
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 20px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 20px;
+
+  flex-wrap: nowrap; /* 🔑 */
 }
 
 /* LOGO */
@@ -30,60 +25,64 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #ffffff;
-  margin: 0;
-}
-
-#navbar .logo img {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-}
-
-#navbar .logo-text {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-#navbar .logo-text span {
-  color: #ff9cce;
+  color: white;
+  flex-shrink: 0; 
+  
 }
 
 /* LINKS */
 #navbar .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
+
+
+  color: white;
+  text-decoration: none;
+  font-size: 12px; /* 👈 ligeramente menor */
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  padding: 6px 8px;
+  border-radius: 8px;
 }
+  
 
 #navbar .nav-links a {
+  color: white;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.1rem;
-  padding: 8px 10px;
-  border-radius: 10px;
-  transition: color 0.2s ease, background 0.2s ease;
+  font-size: 12px; /* 👈 ligeramente menor */
+  font-weight: 700;
 }
 
 #navbar .nav-links a:hover {
+  background: rgba(255,255,255,0.12);
   color: #ff9cce;
-  background: rgba(255, 255, 255, 0.1);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  #navbar .container {
-    justify-content: center;
-  }
+/* LOGIN */
+#navbar .nav-login-btn {
+  margin-left: auto;
 
-  #navbar .nav-links {
-    justify-content: center;
-  }
+  background: linear-gradient(135deg, #ff9cce, #f472b6);
+  color: #083d77;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  flex-shrink: 0; /* 🔑 */
+}
+/* Agrega esto para controlar el tamaño de la imagen */
+#navbar .logo img {
+  height: 40px; /* Ajusta este valor según prefieras (ej: 35px a 50px) */
+  width: auto;  /* Mantiene la proporción original para que no se deforme */
+  object-fit: contain;
+}
+
+/* Opcional: Estilo para el texto "EXPORTIFY" al lado de la imagen */
+#navbar .logo .logo-text {
+  font-size: 20px; /* Tamaño del texto */
+  font-weight: 800; /* Grosor de la letra */
+  color: #ff9cce; /* Color rosa (o usa white) */
+  letter-spacing: 1px;
 }
