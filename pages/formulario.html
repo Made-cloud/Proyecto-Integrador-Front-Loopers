@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión
+    </title>
+    <link rel="stylesheet" href="/assets/css/formulario.css">
+    <script src="/assets/js/formulario.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+</head>
+<body>
+    <!-- Navbar Fijo -->
+    <div id="navbar"></div>
+
+    <div class="container">
+        <div class="login-card">
+
+            <!-- Encabezado -->
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-lock"></i>
+                </div>
+                    <h1>Registrate en Sportify</h1>
+                <p class="subtitle">
+                    Autenticación con LocalStorage
+                </p>
+            </div>
+
+            <!-- Formulario de Registro -->
+            <form id="loginForm" class="login-form">
+                
+                <!-- Campo Nombre -->
+                <div class="form-group">
+                    <label for="name">
+                        <i class="fas fa-envelope"></i> 
+                        Nombre Completo
+                    </label>
+                    <input 
+                        type="name" 
+                        id="name" 
+                        name="name"
+                        placeholder="Juan Manuel Benitez Quiroz"
+                        required>
+                    <div class="error-message" id="nameError">
+                    </div>
+                </div>
+
+                <!-- Campo Teléfono -->
+                <div class="form-group">
+                    <label for="phonenumber">
+                        <i class="fas fa-envelope"></i> 
+                        Teléfono
+                    </label>
+                    <input 
+                        type="phonenumber" 
+                        id="phonenumber" 
+                        name="phonenumber"
+                        placeholder="+569 1234 5678"
+                        required>
+                    <div class="error-message" id="phonenumberError">
+                    </div>
+                </div>
+
+                <!-- Campo Email -->
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> Correo Electrónico
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="usuario@ejemplo.com"
+                        required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <!-- Campo Contraseña -->
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-key"></i> 
+                            Contraseña
+                    </label>
+                    <div class="password-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="Crea tu contraseña"
+                            required>
+                        <button type="button" id="togglePassword" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordcheck">
+                        <i class="fas fa-key"></i> 
+                            Repita Contraseña
+                    </label>
+                    <div class="password-container">
+                        <input 
+                            type="passwordcheck" 
+                            id="passwordcheck" 
+                            name="passwordcheck"
+                            placeholder="Repita su contraseña"
+                            required>
+                        <button type="button" id="togglePassword" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordcheckError"></div>
+                </div>
+
+                <!-- Recordarme -->
+                <div class="form-group remember">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">
+                        Recordar mi sesión
+                    </label>
+                </div>
+
+                <!-- Botón de Envío -->
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> 
+                        Crear Cuenta
+                </button>
+
+                <!-- Enlaces adicionales 
+                <div class="links">
+                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                    <a href="#" class="register-link">Crear una cuenta</a>
+                </div> -->
+
+                <!-- Mensaje de error general -->
+                <div class="error-message general" id="generalError"></div>
+
+                <!-- Mensaje de éxito -->
+                <div class="success-message" id="successMessage"></div>
+           
+            </form>
+   
+        </div>
+    </div>
+
+        <!-- Footer -->
+
+    
+     <footer>
+        <div><p class="time" id="currentTime"></p></div>
+        <div id="footer"></div>
+    </footer>
+
+    <script src="/assets/js/formulario.js"></script>
+</body>
+</html>

@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="/assets/css/login.css">
     <script src="/assets/js/login.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script src="../assets/js/layout.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
 </head>
-<body>
+
     <!-- Navbar Fijo -->
     <div id="navbar"></div>
+    
 
     <div class="container">
         <div class="login-card">
 
             <!-- Encabezado -->
             <div class="header">
-                <div class="logo">
+                <div class="logo-session">
                     <i class="fas fa-lock"></i>
                 </div>
                 <h1>Inicio de Sesión</h1>
-                <p class="subtitle">Autenticación con LocalStorage</p>
+                <p class="subtitle">
+                    Autenticación con Local Storage
+                </p>
             </div>
 
             <!-- Formulario de Login -->
@@ -31,7 +35,8 @@
                 <!-- Campo Email -->
                 <div class="form-group">
                     <label for="email">
-                        <i class="fas fa-envelope"></i> Correo Electrónico
+                        <i class="fas fa-envelope"></i> 
+                            Correo Electrónico
                     </label>
                     <input 
                         type="email" 
@@ -39,13 +44,15 @@
                         name="email"
                         placeholder="usuario@ejemplo.com"
                         required>
-                    <div class="error-message" id="emailError"></div>
+                    <div class="error-message" id="emailError">
+                    </div>
                 </div>
 
                 <!-- Campo Contraseña -->
                 <div class="form-group">
                     <label for="password">
-                        <i class="fas fa-key"></i> Contraseña
+                        <i class="fas fa-key"></i>
+                            Contraseña
                     </label>
                     <div class="password-container">
                         <input 
@@ -61,21 +68,26 @@
                     <div class="error-message" id="passwordError"></div>
                 </div>
 
-                <!-- Recordarme -->
+                <!-- Recordar mi sesión -->
                 <div class="form-group remember">
                     <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Recordar mi sesión</label>
+                    <label for="remember">
+                        Recordar mi sesión
+                    </label>
                 </div>
 
                 <!-- Botón de Envío -->
                 <button type="submit" class="submit-btn">
-                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                    <i class="fas fa-sign-in-alt"></i> 
+                        Iniciar Sesión
                 </button>
 
                 <!-- Enlaces adicionales -->
                 <div class="links">
-                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
-                    <a href="#" class="register-link">Crear una cuenta</a>
+                    <a href="#" class="forgot-link">
+                        ¿Olvidaste tu contraseña?</a>
+                    <a href="/pages/formulario.html" class="register-link">
+                        Crear una cuenta</a>
                 </div>
 
                 <!-- Mensaje de error general -->
@@ -87,16 +99,20 @@
 
             <!-- Información de usuarios de prueba -->
             <div class="test-users">
-                <h3><i class="fas fa-users"></i> Usuarios de Prueba</h3>
+                <h3><i class="fas fa-users"></i> 
+                            Usuarios de Prueba</h3>
                 <div class="users-list">
                     <div class="user">
-                        <strong>Admin:</strong> admin@test.com / Admin123
+                        <strong>Admin:</strong> 
+                            admin@test.com / Admin123
                     </div>
                     <div class="user">
-                        <strong>Usuario:</strong> usuario@test.com / User123
+                        <strong>Usuario:</strong>
+                            usuario@test.com / User123
                     </div>
                     <div class="user">
-                        <strong>Invitado:</strong> invitado@test.com / Guest123
+                        <strong>Invitado:</strong> 
+                            invitado@test.com / Guest123
                     </div>
                 </div>
             </div>
@@ -105,23 +121,32 @@
             <div class="status">
                 <div class="status-item">
                     <i class="fas fa-database"></i>
-                    <span id="storageStatus">LocalStorage disponible</span>
+                    <span id="storageStatus">
+                        LocalStorage disponible
+                    </span>
                 </div>
                 <div class="status-item">
                     <i class="fas fa-user-check"></i>
-                    <span id="usersCount">Usuarios cargados: 0</span>
+                    <span id="usersCount">
+                        Usuarios cargados: 0
+                    </span>
                 </div>
             </div>
         </div>
-
+    </div>  
         <!-- Footer -->
 
+    <footer>    
+        <div class="container">
+            <p class="time" id="currentTime"></p>
+        </div>
+        <div id="footer"></div>
+    </footer>
     
-     <footer>
-        <div id="navbar"></div>
-     <div><p class="time" id="currentTime"></p></div>
-     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+ <!-- TAREA PARA JOTA: 
+  AJUSTAR A LA PALETA DE COLORES, VER OPCION DE QUE QUEDE SOBRE LA PÁGINA, AGREGAR EL FOOTER Y EL NAVBAR -->

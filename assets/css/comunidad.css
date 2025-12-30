@@ -114,6 +114,10 @@ body {
     font-size: 0.9rem;
 }
 
+.lista-tendencia, ul{
+    list-style-type: none;
+}
+
 /* BARRA DE BUSQUEDA */
 .search-bar-container {
     background: white;

@@ -4,7 +4,7 @@
 *,
 *::before,
 *::after {
-
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -13,7 +13,6 @@
    VARIABLES
 ========================== */
 :root {
-  
   --primary: #1a365d;
   --primary-light: #2b4a7c;
   --secondary: #38b2ac;
@@ -40,8 +39,7 @@
    BASE
 ========================== */
 body {
-  
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background);
   color: var(--text-primary);
   line-height: 1.6;
@@ -51,63 +49,14 @@ body {
    CONTENEDOR
 ========================== */
 main.container {
-  
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
 /* ==========================
-   HERO NOTICIAS (como index)
+   HEADER CENTRADO (CLAVE)
 ========================== */
-.news-hero {
-  width: 100%;
-  background: linear-gradient(135deg, #f5ea59, #f189bd);
-  padding: 3rem 0rem;
-  position: relative;
-  
-  border-bottom-left-radius: 48px;
-  border-top-right-radius: 28px;
-}
-
-
-/* Centra el contenido del hero */
-.news-hero .page-header {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Texto blanco sobre degradado */
-.news-hero .page-title {
-  color: #1a365d;
-}
-
-.news-hero .page-subtitle {
-  color: rgba(26, 54, 93, 0.75);
-}
-
-/* Filtros adaptados al hero */
-.news-hero .filter-btn {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-color: transparent;
-}
-
-.news-hero .filter-btn.active {
-  background-color: var(--primary);
-  color: #ffffff;
-}
-
-.news-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top,
-    rgba(255,255,255,0.25),
-    transparent 60%
-  );
-  pointer-events: none;
-}
 .page-header {
   display: flex;
   flex-direction: column;
@@ -115,18 +64,21 @@ main.container {
   text-align: center;
   gap: 1.5rem;
   margin-bottom: 3.5rem;
-  
 }
 
 /* TÍTULO */
-.news-hero .page-title {
-  font-size: clamp(3rem, 6vw, 4rem);
-  letter-spacing: -0.03em;
-  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: var(--primary);
 }
-.news-hero .page-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.7;
+
+/* SUBTÍTULO */
+.page-subtitle {
+  max-width: 620px;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
 }
 
 /* ==========================
@@ -140,29 +92,27 @@ main.container {
 }
 
 .filter-btn {
-  padding: 0.65rem 1.8rem;
+  padding: 0.6rem 1.6rem;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--primary);
-  background-color: rgba(255, 255, 255, 0.95);
-  border: none;
+  color: var(--text-secondary);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 999px;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  transition: var(--transition);
 }
 
 .filter-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  color: var(--primary);
+  border-color: var(--primary-light);
 }
 
 .filter-btn.active {
   background-color: var(--primary);
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(26, 54, 93, 0.35);
+  border-color: var(--primary);
 }
-
 
 /* ==========================
    GRID DE NOTICIAS
@@ -179,7 +129,7 @@ main.container {
 .news-card {
   background-color: var(--surface);
   border-radius: var(--radius);
-  overflow: visible; 
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   opacity: 0;
@@ -200,71 +150,7 @@ main.container {
 
 .news-card-content {
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
 }
-.news-card-link {
-  margin-top: 1rem;      /* ❗ NO auto */
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  color: var(--primary);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-
-  padding-top: 0.8rem;
-  border-top: 1px solid var(--border);
-
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.news-card-link:hover {
-  color: var(--accent);
-  transform: translateX(4px);
-}
-.news-card-link svg {
-  transition: transform 0.3s ease;
-}
-
-.news-card-link:hover svg {
-  transform: translateX(4px);
-}
-
-.news-card-category {
-  display: inline-block;
-  width: fit-content;
-
-  padding: 0.3rem 0.75rem;
-  margin-bottom: 0.75rem;
-
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-
-  border-radius: 999px;
-  background-color: rgba(26, 54, 93, 0.08);
-  color: var(--primary);
-
-  line-height: 1;
-}
-.news-card-category.exportify {
-  background-color: rgba(78, 91, 110, 0.12);
-  color: var(--primary);
-}
-.news-card-category.comercio {
-  background-color: rgba(56, 178, 172, 0.15);
-  color: var(--secondary);
-}
-.news-card-category.tecnologia {
-  background-color: rgba(237, 137, 54, 0.18);
-  color: var(--accent);
-}
-
-
-
 
 /* ==========================
    TEXTO TARJETA
@@ -277,9 +163,8 @@ main.container {
   line-height: 1.4;
 
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  line-clamp: 2; /* para compatibilidad futura */
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -290,9 +175,8 @@ main.container {
   line-height: 1.5;
 
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  line-clamp: 3; /* para compatibilidad futura */
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -304,7 +188,6 @@ main.container {
   justify-content: space-between;
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
 }
 
 /* ==========================
@@ -326,12 +209,10 @@ main.container {
   border-radius: var(--radius);
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 10px 30px rgba(26, 54, 93, 0.3);
 }
 
 .load-more-btn:hover {
   background-color: var(--primary-light);
-  transform: translateY(-2px);
 }
 
 /* ==========================
@@ -356,5 +237,17 @@ main.container {
     grid-template-columns: 1fr;
   }
 }
-
+/* FIX ANTI-CSS VIEJO: evita que un header global pinte el header de página */
+.page-header {
+  background: transparent !important;
+  position: static !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+/* Asegura que el contenido de Noticias no sea afectado por containers globales */
+main.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 3rem 1.5rem !important;
+}
 
