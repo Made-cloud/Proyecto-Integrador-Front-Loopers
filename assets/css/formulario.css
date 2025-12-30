@@ -327,15 +327,10 @@ body {
     width: 100%;
 }
 
-/*Time*/
-
-.time {
-    align-items: center;
-    text-align: center;
-    font-size: 14px;
-    color: #fff;
-    margin-top: 10px;
-    font-family: 'Courier New', Courier, monospace;
+.footer .time {
+    font-size: 13px;
+    margin-top: 5px;
+    font-family: monospace;
 }
 
 /* Página de inicio (inicio.html) */
@@ -381,6 +376,16 @@ body {
 .logout-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(255, 65, 108, 0.2);
+}
+
+/*Time*/
+.time {
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Responsive */
