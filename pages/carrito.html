@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Cursos</title>
+  <link rel="stylesheet" href="../assets/css/carrito.css">
+  
+  <script src="../assets/js/carrito.js"></script>
+</head>
+<div id="navbar"></div>
+<body>    
+     <header>
+            <div id="navbar"></div>
+  <h1>Cursos Online 💻</h1>
+  <button id="carrito-btn">
+    🛒 Carrito (<span id="contador">0</span>)
+  </button>
+        </header>
+
+
+
+<section class="cursos">
+  <div class="curso">
+    <h3>Curso Java Full Stack</h3>
+    <p>$50</p>
+    <button onclick="agregarAlCarrito('Java Full Stack', 50)">Agregar</button>
+  </div>
+
+  <div class="curso">
+    <h3>Curso Python</h3>
+    <p>$40</p>
+    <button onclick="agregarAlCarrito('Python', 40)">Agregar</button>
+  </div>
+</section>
+
+
+  <div id="footer"></div>
+    <script src="../assets/js/layout.js"></script>
+</body>
+
+</html>
