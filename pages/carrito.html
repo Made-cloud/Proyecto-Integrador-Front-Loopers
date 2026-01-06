@@ -3,39 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <title>Carrito de Cursos</title>
+
+  <!-- ✅ BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- TU CSS -->
   <link rel="stylesheet" href="../assets/css/carrito.css">
-  
-  <script src="../assets/js/carrito.js"></script>
 </head>
+
+<body>
+
 <div id="navbar"></div>
-<body>    
-     <header>
-            <div id="navbar"></div>
-  <h1>Cursos Online 💻</h1>
-  <button id="carrito-btn">
-    🛒 Carrito (<span id="contador">0</span>)
-  </button>
-        </header>
+
+<!-- hero section -->
 
 
+  <section class="text-center my-4">
+    <h2>Cursos Online 💻</h2>
+    <button class="btn btn-outline-primary">
+      🛒 Carrito (<span id="contador">0</span>)
+    </button>
+  </section>
+  
 
-<section class="cursos">
-  <div class="curso">
-    <h3>Curso Java Full Stack</h3>
-    <p>$50</p>
-    <button onclick="agregarAlCarrito('Java Full Stack', 50)">Agregar</button>
+  <!-- 🔥 CARRUSEL -->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="../assets/images/exportacion.jpg" class="d-block w-100" alt="Exportación">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Normas para exportar</h5>
+          <p>Aprende a exportar paso a paso.</p>
+          <p>$50.000</p>
+          <button class="btn btn-primary"
+            onclick="agregarAlCarrito('Normas para exportar', 50000)">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../assets/images/certificaciones.jpg" class="d-block w-100" alt="Certificaciones">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Certificaciones</h5>
+          <p>Certificaciones reconocidas internacionalmente.</p>
+          <p>$70.000</p>
+          <button class="btn btn-primary"
+            onclick="agregarAlCarrito('Certificaciones', 70000)">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../assets/images/marketing.png" class="d-block w-100" alt="Marketing">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Marketing Digital</h5>
+          <p>Estrategias digitales efectivas.</p>
+          <p>$60.000</p>
+          <button class="btn btn-primary"
+            onclick="agregarAlCarrito('Marketing Digital', 60000)">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
   </div>
-
-  <div class="curso">
-    <h3>Curso Python</h3>
-    <p>$40</p>
-    <button onclick="agregarAlCarrito('Python', 40)">Agregar</button>
-  </div>
-</section>
-
 
   <div id="footer"></div>
-    <script src="../assets/js/layout.js"></script>
-</body>
 
+  <!-- ✅ BOOTSTRAP JS (OBLIGATORIO) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- TU JS -->
+  <script src="../assets/js/layout.js"></script>
+  <script src="../assets/js/carrito.js"></script>
+
+</body>
 </html>
