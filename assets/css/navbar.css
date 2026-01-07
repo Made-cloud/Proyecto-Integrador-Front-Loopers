@@ -1,88 +1,184 @@
-#navbar header {
-  background-color: #083d77;
-  padding: 16px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* ===== RESET BÁSICO (IMPORTANTE) ===== */
+* {
+  box-sizing: border-box;
 }
 
-/* CONTENEDOR */
+/* ===== NAVBAR ===== */
+#navbar {
+  background-color: #083d77;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== CONTENEDOR ===== */
 #navbar .container {
-  max-width: 1200px; /* 👈 más aire */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 16px 20px;
 
   display: flex;
   align-items: center;
   gap: 20px;
-
-  flex-wrap: nowrap; /* 🔑 */
 }
 
-/* LOGO */
-#navbar .logo {
+/* ===== LOGO ===== */
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: white;
-  flex-shrink: 0; 
-  
 }
 
-/* LINKS */
-#navbar .nav-links {
-
-
-  color: white;
-  text-decoration: none;
-  font-size: 12px; /* 👈 ligeramente menor */
-  font-weight: 600;
-  letter-spacing: 0.08rem;
-  padding: 6px 8px;
-  border-radius: 8px;
-}
-  
-
-#navbar .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 12px; /* 👈 ligeramente menor */
-  font-weight: 700;
+.logo img {
+  height: 40px;
 }
 
-#navbar .nav-links a:hover {
-  background: rgba(255,255,255,0.12);
+.logo-text {
+  font-size: 20px;
+  font-weight: 800;
   color: #ff9cce;
 }
 
-/* LOGIN */
-#navbar .nav-login-btn {
-  margin-left: auto;
+/* ===== CHECKBOX (OCULTO DEFINITIVO) ===== */
+#menu-toggle {
+  position: fixed !important;
+  top: 0;
+  left: 0;
 
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* ===== HAMBURGUESA ===== */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 26px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* ===== ACCIONES ===== */
+.nav-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-login-btn {
   background: linear-gradient(135deg, #ff9cce, #f472b6);
   color: #083d77;
-
   padding: 8px 18px;
   border-radius: 999px;
-
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
-
-  flex-shrink: 0; /* 🔑 */
-}
-/* Agrega esto para controlar el tamaño de la imagen */
-#navbar .logo img {
-  height: 40px; /* Ajusta este valor según prefieras (ej: 35px a 50px) */
-  width: auto;  /* Mantiene la proporción original para que no se deforme */
-  object-fit: contain;
 }
 
-/* Opcional: Estilo para el texto "EXPORTIFY" al lado de la imagen */
-#navbar .logo .logo-text {
-  font-size: 20px; /* Tamaño del texto */
-  font-weight: 800; /* Grosor de la letra */
-  color: #ff9cce; /* Color rosa (o usa white) */
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 260px;
+  height: 100vh;
+
+  background-color: #083d77;
+  padding-top: 20px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  z-index: 2000;
+}
+
+/* MOSTRAR SIDEBAR */
+#menu-toggle:checked ~ .sidebar {
+  transform: translateX(0);
+}
+
+/* ===== LOGO EN SIDEBAR ===== */
+.sidebar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  padding: 20px 0;
+  margin-bottom: 10px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-logo img {
+  height: 50px;
+}
+
+.sidebar-logo span {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ff9cce;
   letter-spacing: 1px;
+}
+
+/* ===== LINKS ===== */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 14px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ff9cce;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+  z-index: 1500;
+}
+
+/* Mostrar overlay */
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  pointer-events: auto;
 }

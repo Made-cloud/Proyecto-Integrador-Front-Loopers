@@ -1,35 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../assets/css/navbar.css" />
-  <title>navbar</title>
+  <title>Navbar</title>
 </head>
 
 <body>
-  <header>
-    <div class="container">
 
-      <!-- Marca (imagen + texto) -->
-      <a href="../index.html" class="logo">
-        <img src="../assets/images/logo-exportify.png" alt="Exportify logo" />
-        <span class="logo-text">EXPORTI<span>FY</span></span>
-      </a>
+<header id="navbar">
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="overlay"></label>
 
-      <!-- Links -->
-      <ul class="nav-links">
-        <li><a href="../index.html">INICIO</a></li>
-        <li><a href="../pages/aboutUs.html">SOBRE NOSOTROS</a></li>
-        <li><a href="../pages/comunidad.html">COMUNIDAD</a></li>
-        <li><a href="../pages/seguimiento.html">SEGUIMIENTO</a></li>
-        <li><a href="../pages/cursos.html">CURSOS</a></li>
-        <li><a href="../pages/noticias.html">NOTICIAS</a></li>
-        <li><a href="../pages/contacto.html">CONTÁCTENOS</a></li>
-      </ul>
+  <div class="container">
+    <!-- Logo -->
+    <a href="../index.html" class="logo">
+      <img src="../assets/images/logo-exportify.png" alt="Exportify logo">
+      <span class="logo-text">EXPORTI<span>FY</span></span>
+    </a>
+
+    <!-- Hamburguesa -->
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Acciones -->
+    <div class="nav-actions">
       <a href="../pages/login.html" class="nav-login-btn">Login</a>
       <a href="../pages/carrito.html" class="nav-login-btn">Carrito</a>
     </div>
-  </header>
+  </div>
+
+
+  <!-- Sidebar -->
+<nav class="sidebar">
+
+
+  <div class="sidebar-logo">
+    <img src="../assets/images/logo-exportify.png" alt="Exportify logo">
+    <span>EXPORTI<span>FY</span></span>
+  </div>
+
+  <ul>
+    <li><a href="../index.html">INICIO</a></li>
+    <li><a href="../pages/aboutUs.html">SOBRE NOSOTROS</a></li>
+    <li><a href="../pages/comunidad.html">COMUNIDAD</a></li>
+    <li><a href="../pages/seguimiento.html">SEGUIMIENTO</a></li>
+    <li><a href="../pages/cursos.html">CURSOS</a></li>
+    <li><a href="../pages/noticias.html">NOTICIAS</a></li>
+    <li><a href="../pages/contacto.html">CONTÁCTENOS</a></li>
+  </ul>
+
+</nav>
+
+
+</header>
+
 </body>
 </html>
