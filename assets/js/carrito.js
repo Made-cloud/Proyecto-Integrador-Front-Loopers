@@ -1,12 +1,13 @@
 // =======================================
 // CARRITO DE CURSOS - FRONTEND ONLY
+// FUNCIONA CON NAVBAR DINÁMICO (FETCH)
 // =======================================
 
-// --------- ESTADO ---------
+// ---------- ESTADO GLOBAL ----------
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// --------- SELECTORES ---------
-const contador = document.getElementById("contador");
+// ---------- SELECTORES (DINÁMICOS) ----------
+let contador = null;
 const contenedorCarrito = document.querySelector(".empty-cart");
 const resumenCompra = document.querySelector(".summary");
 
@@ -22,8 +23,14 @@ function guardarCarrito() {
 }
 
 function actualizarContador() {
+  // Volvemos a buscar el contador porque el navbar es dinámico
+  contador = document.getElementById("contador");
+
   if (contador) {
     contador.textContent = carrito.length;
+
+    // Opcional: ocultar si está en 0
+    contador.style.display = carrito.length > 0 ? "flex" : "none";
   }
 }
 
@@ -32,7 +39,7 @@ function obtenerTotal() {
 }
 
 // =======================================
-// AGREGAR AL CARRITO
+// AGREGAR CURSO
 // =======================================
 
 function agregarAlCarrito(nombre, precio) {
@@ -58,43 +65,39 @@ function eliminarCurso(index) {
 function renderizarCarrito() {
   if (!contenedorCarrito) return;
 
-  // ---- CARRITO VACÍO ----
+  // CARRITO VACÍO
   if (carrito.length === 0) {
     contenedorCarrito.innerHTML = `
-      <div class="text-center p-5">
-        <h4 class="mb-3">Tu carrito está vacío 🛒</h4>
-        <p class="text-muted">
-          Aún no has agregado cursos a tu carrito.
-        </p>
-        <a href="../pages/cursos.html" class="btn btn-primary mt-3">
-          Explorar cursos
-        </a>
-      </div>
+      <h4 class="mb-3">Tu carrito está vacío 🛒</h4>
+      <p class="text-muted">
+        Aún no has agregado cursos a tu carrito.
+      </p>
+      <a href="../pages/cursos.html" class="btn btn-primary mt-3">
+        Explorar cursos
+      </a>
     `;
     return;
   }
 
-  // ---- CARRITO CON CURSOS ----
+  // CARRITO CON PRODUCTOS
   contenedorCarrito.innerHTML = `
-    <h4 class="mb-4">Tus cursos</h4>
+    <h4 class="mb-4 text-start">Tus cursos</h4>
 
-    <ul class="list-group mb-3">
+    <ul class="list-group">
       ${carrito
         .map(
           (curso, index) => `
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <strong>${curso.nombre}</strong><br>
-              <span class="text-muted">$${curso.precio.toLocaleString("es-CL")}</span>
-            </div>
-            <button
-              class="btn btn-sm btn-danger"
-              onclick="eliminarCurso(${index})"
-            >
-              ❌
-            </button>
-          </li>
-        `
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <strong>${curso.nombre}</strong><br>
+            <span class="text-muted">$${curso.precio.toLocaleString("es-CL")}</span>
+          </div>
+
+          <button class="btn btn-sm btn-danger" onclick="eliminarCurso(${index})">
+            ❌
+          </button>
+        </li>
+      `
         )
         .join("")}
     </ul>
@@ -111,7 +114,24 @@ function renderizarResumen() {
   if (carrito.length === 0) {
     resumenCompra.innerHTML = `
       <h5 class="mb-3">Resumen de la compra</h5>
-      <p class="text-muted">No hay productos</p>
+
+      <div class="d-flex justify-content-between mb-2">
+        <span>Productos (0)</span>
+        <span>$0</span>
+      </div>
+
+      <div class="d-flex justify-content-between mb-3">
+        <span>Descuentos</span>
+        <span>$0</span>
+      </div>
+
+      <hr>
+
+      <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+        <span>Total</span>
+        <span>$0</span>
+      </div>
+
       <button class="btn btn-secondary w-100" disabled>
         Continuar compra
       </button>
@@ -172,8 +192,14 @@ function comprar() {
 // INICIALIZACIÓN
 // =======================================
 
+// DOM listo
 document.addEventListener("DOMContentLoaded", () => {
   actualizarContador();
   renderizarCarrito();
   renderizarResumen();
+});
+
+// Navbar cargado por fetch
+document.addEventListener("navbarLoaded", () => {
+  actualizarContador();
 });
