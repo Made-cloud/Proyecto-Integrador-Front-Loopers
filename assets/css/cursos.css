@@ -217,8 +217,9 @@ header {
 ========================== */
 .catalogo-body .catalogo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
+  
 }
 
 /* ==========================
@@ -250,6 +251,7 @@ header {
   width: 100%;
   height: 190px;
   object-fit: cover;
+  image-orientation: from-image;
 }
 
 .catalogo-body .card__body {
@@ -263,11 +265,13 @@ header {
 .catalogo-body .card__title {
   font-size: 1.2rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .catalogo-body .card__description {
   font-size: 0.95rem;
   color: var(--color-text-muted);
+  text-align: justify;
 }
 
 .catalogo-body .card__price {
