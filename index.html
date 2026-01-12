@@ -4,48 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exportify - Emprendedoras al Mundo</title>
-    <link rel="stylesheet" href="/assets/css/unified.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
     <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
     <script src="/assets/js/script.js"></script>
     <script src="assets/js/layout.js"></script>
   </head>
   <body>
-    <!-- HEADER -->
-
+    <!-- Navbar -->
   <div id="navbar"></div>
 
-    <!-- HERO -->
-    <section id="home" class="hero fade-in-up">
-      <h1>Vende tus productos al mundo</h1>
-      <p>Plataforma creada para mujeres emprendedoras chilenas que quieren llegar al mercado internacional.</p>
-      <button class="btn-primary" id="verCatalogoBtn">Ver Catálogo</button>
+   <main class="main-container">
+
+  <section class="hero">
+       
+    <div class="hero-content">
+        <h1>EXPORTIFY</h1>
+        <h2 class="h2-white">Llevando el talento de la mujer emprendedora a mercados globales</h2>
+        <div class="hero-buttons">
+            <a href="pages/cursos.html" class="btn-primary">Ver Productos</a>
+            <a href="/pages/aboutUs.html" class="btn-secondary">Nuestra Misión</a>
+        </div>
+    </div>
+</section>
+
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-seedling"></i>
+            <h3>Productos Locales</h3>
+            <p>Selección artesanal y sostenible con sello de origen.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Envío Seguro</h3>
+            <p>Logística internacional optimizada para pequeñas empresas.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-users"></i>
+            <h3>Red de Mujeres</h3>
+            <p>Conectamos a más de 500 emprendedoras con el mundo.</p>
+        </div>
     </section>
 
-    <!-- CATÁLOGO -->
-    <section id="catalogo" class="catalog-section fade-in-up" style="animation-delay: 0.2s;">
-      <h2>Catálogo Internacional</h2>
-      <div id="productList" class="catalog-grid"></div>
+    <section class="cta-banner">
+        <h2>¿Lista para internacionalizar tu marca?</h2>
+        <p class="p-white">Únete a la plataforma de exportación más grande de la región.</p>
+        <a href="/pages/formulario.html">
+          <button class="btn-cta">Regístrate Ahora</button>
+        </a>
     </section>
+</main>
 
-    <!-- FORMULARIO PARA OFRECER PRODUCTO -->
-    <section id="ofrecer" class="form-section fade-in-up" style="animation-delay: 0.4s;">
-      <h2>Ofrecer Producto</h2>
-      <form id="productForm" class="product-form">
-        <input type="text" id="nombreProducto" placeholder="Nombre del producto" required />
-        <input type="number" id="precioProducto" placeholder="Precio (USD)" required />
-        <textarea id="descripcionProducto" placeholder="Descripción" required></textarea>
-        <button type="submit" class="btn-primary">Publicar Producto</button>
-      </form>
-    </section>
-
-    <!-- INTERACCIÓN ENTRE USUARIOS - COMENTARIOS -->
-    <section class="comentarios-section fade-in-up" style="animation-delay: 0.6s;">
-      <h2>Comentarios de Usuarias</h2>
-      <div id="comentarios"></div>
-      <textarea id="nuevoComentario" placeholder="Escribe un comentario..."></textarea>
-
-      <div id="botonSecundario"><button id="enviarComentario" class="btn-secondary">Enviar</button></div>
-    </section>
     <!-- FOOTER -->
      <div id="footer"></div>
   </body>
