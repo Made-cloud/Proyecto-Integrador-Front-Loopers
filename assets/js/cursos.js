@@ -18,6 +18,17 @@ const cursos = [
     imagen: "../assets/images/marketing.png"
   }
 ];
+function agregarAlCarrito(nombre, precio) {
+  const existe = carrito.some(curso => curso.nombre === nombre);
+
+  if (existe) {
+    alert("Este curso ya está en el carrito 💡");
+    return;
+  }
+
+  carrito.push({ nombre, precio });
+  guardarCarrito();
+}
 
 const contenedor = document.getElementById("catalogo-cursos-js");
 
