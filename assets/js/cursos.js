@@ -38,6 +38,12 @@ const cursos = [
   
 
 ];
+function agregarAlCarrito(titulo, precio) {
+ alert(`Curso "${titulo}" agregado al carrito por $${precio.toLocaleString("es-CL")}`); 
+ 
+
+  
+}
 
 const contenedor = document.getElementById("catalogo-cursos-js");
 
@@ -51,10 +57,9 @@ cursos.forEach(curso => {
       <h3 class="card__title">${curso.titulo}</h3>
       <p class="card__description">${curso.descripcion}</p>
       <p class="card__price">$${curso.precio.toLocaleString("es-CL")}</p>
-      <button class="btn btn-primary agregar-carrito" data-titulo="${curso.titulo}" data-precio="${curso.precio}">Agregar al carrito</button>
+      <button onclick="agregarAlCarrito('${curso.titulo}', ${curso.precio})" class="btn btn-primary agregar-carrito" data-titulo="${curso.titulo}" data-precio="${curso.precio}">Agregar al carrito</button>
     </div>
   `;
 
   contenedor.appendChild(card);
-  
 });

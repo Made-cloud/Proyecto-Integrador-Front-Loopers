@@ -4,98 +4,190 @@
   <meta charset="UTF-8">
   <title>Carrito de Cursos</title>
 
-  <!-- ✅ BOOTSTRAP CSS -->
+  <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- TU CSS -->
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/cursos.js"></script>
+  <!-- CSS PROPIO -->
   <link rel="stylesheet" href="../assets/css/carrito.css">
+  <div id="navbar"></div>
 </head>
 
 <body>
 
-<div id="navbar"></div>
-
-<!-- hero section -->
+<!-- NAVBAR DINÁMICO -->
 
 
-  <section class="text-center my-4">
-    <h2>Cursos Online 💻</h2>
-    <button class="btn btn-outline-primary">
-      🛒 Carrito (<span id="contador">0</span>)
-    </button>
-  </section>
-  
 
-  <!-- 🔥 CARRUSEL -->
-  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+<!-- HERO -->
+<section class="text-center my-4">
+  <h2>Cursos Online 💻</h2>
+  <button class="btn btn-light mt-3">
+    🛒 Carrito (<span id="contador">0</span>)
+  </button>
+</section>
 
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+<!-- CONTENIDO PRINCIPAL -->
+<div class="container my-5">
+  <div class="row g-4">
+
+<!-- COLUMNA CARRITO -->
+<div class="col-md-8">
+  <div
+    class="empty-cart shadow-sm bg-white rounded-4 p-4"
+    id="carrito-contenido"
+  >
+    <!-- ESTE CONTENIDO SE REEMPLAZA DESDE JS -->
+    <h4 class="mb-3 text-center">Tu carrito está vacío 🛒</h4>
+    <p class="text-muted text-center">
+      Aún no has agregado cursos a tu carrito.
+    </p>
+    <div class="text-center">
+      <a href="../pages/cursos.html" class="btn btn-primary mt-3">
+        Explorar cursos
+      </a>
     </div>
+  </div>
+</div>
 
-    <div class="carousel-inner">
 
-      <div class="carousel-item active">
-        <img src="../assets/images/exportacion.jpg" class="d-block w-100" alt="Exportación">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Normas para exportar</h5>
-          <p>Aprende a exportar paso a paso.</p>
-          <p>$50.000</p>
-          <button class="btn btn-primary"
-            onclick="agregarAlCarrito('Normas para exportar', 50000)">
-            Agregar al carrito
-          </button>
+    <!-- RESUMEN -->
+    <div class="col-md-4">
+      <div class="summary shadow-sm bg-white rounded-4 p-4 opacity-50">
+        <h5 class="mb-3">Resumen de la compra</h5>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span>Productos (0)</span>
+          <span>$0</span>
         </div>
-      </div>
 
-      <div class="carousel-item">
-        <img src="../assets/images/certificaciones.jpg" class="d-block w-100" alt="Certificaciones">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Certificaciones</h5>
-          <p>Certificaciones reconocidas internacionalmente.</p>
-          <p>$70.000</p>
-          <button class="btn btn-primary"
-            onclick="agregarAlCarrito('Certificaciones', 70000)">
-            Agregar al carrito
-          </button>
+        <div class="d-flex justify-content-between mb-3">
+          <span>Descuentos</span>
+          <span>$0</span>
         </div>
-      </div>
 
-      <div class="carousel-item">
-        <img src="../assets/images/marketing.png" class="d-block w-100" alt="Marketing">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Marketing Digital</h5>
-          <p>Estrategias digitales efectivas.</p>
-          <p>$60.000</p>
-          <button class="btn btn-primary"
-            onclick="agregarAlCarrito('Marketing Digital', 60000)">
-            Agregar al carrito
-          </button>
+        <hr>
+
+        <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+          <span>Total</span>
+          <span>$0</span>
         </div>
-      </div>
 
+        <button class="btn btn-secondary w-100" disabled>
+          Continuar compra
+        </button>
+      </div>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
 
   </div>
+</div>
 
-  <div id="footer"></div>
+<!-- RECOMENDADOS -->
+<div class="container my-5">
+  <div class="recomendados shadow-sm">
+    <h5 class="mb-4">¿Y si le sumas lo último?</h5>
 
-  <!-- ✅ BOOTSTRAP JS (OBLIGATORIO) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="carouselCursos" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
 
-  <!-- TU JS -->
-  <script src="../assets/js/layout.js"></script>
-  <script src="../assets/js/carrito.js"></script>
+        <div class="carousel-item active">
+          <div class="row g-3">
+
+            <!-- CURSO 1 -->
+            <div class="col">
+              <div class="card curso-card">
+                <img src="../assets/images/exportacion.jpg" alt="Exportación">
+                <div class="card-body">
+                  <div class="categoria">COMERCIO EXTERIOR</div>
+                  <div class="nombre">Normas para exportar</div>
+                  <div class="precio">$50.000</div>
+                  <button
+                    class="btn btn-ver"
+                    onclick="agregarAlCarrito('Normas para exportar', 50000)">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- CURSO 2 -->
+            <div class="col">
+              <div class="card curso-card">
+                <img src="../assets/images/certificaciones.jpg" alt="Certificaciones">
+                <div class="card-body">
+                  <div class="categoria">CERTIFICACIONES</div>
+                  <div class="nombre">Certificaciones internacionales</div>
+                  <div class="precio">$70.000</div>
+                  <button
+                    class="btn btn-ver"
+                    onclick="agregarAlCarrito('Certificaciones internacionales', 70000)">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- CURSO 3 -->
+            <div class="col">
+              <div class="card curso-card">
+                <img src="../assets/images/marketing.png" alt="Marketing">
+                <div class="card-body">
+                  <div class="categoria">MARKETING</div>
+                  <div class="nombre">Marketing Digital</div>
+                  <div class="precio">$60.000</div>
+                  <button
+                    class="btn btn-ver"
+                    onclick="agregarAlCarrito('Marketing Digital', 60000)">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- CURSO 4 -->
+            <div class="col">
+              <div class="card curso-card">
+                <img src="https://moldstock.com/wp-content/uploads/2023/03/mujeresen-el-sector-logistico.jpg" alt="Logística">
+                <div class="card-body">
+                  <div class="categoria">LOGÍSTICA</div>
+                  <div class="nombre">Logística y distribución</div>
+                  <div class="precio">$55.000</div>
+                  <button
+                    class="btn btn-ver"
+                    onclick="agregarAlCarrito('Logística y distribución', 55000)">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTROLES -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCursos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselCursos" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER DINÁMICO -->
+<div id="footer"></div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS -->
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/carrito.js"></script>
 
 </body>
 </html>

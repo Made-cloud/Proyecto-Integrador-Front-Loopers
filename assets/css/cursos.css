@@ -352,3 +352,16 @@ header {
     gap: 20px;
   }
 }
+
+.catalogo-body .btn.btn-primary.agregar-carrito {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: var(--color-accent);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}

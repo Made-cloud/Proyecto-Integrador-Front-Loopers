@@ -1,27 +1,51 @@
+// =======================================
+// LAYOUT GLOBAL (NAVBAR + FOOTER)
+// =======================================
+
+// Detectar ruta actual
 const path = window.location.pathname;
 
-// 1. Definir si estamos dentro de la carpeta pages
-// Si la URL tiene "/pages/", tenemos que salir un nivel (../)
-// Si no, estamos en la raíz (./)
+// Si estamos en /pages/ usamos ../
+// Si estamos en la raíz usamos ./
 const basePath = path.includes("/pages/") ? "../" : "./";
 
-// 2. Cargar el Navbar
-// Nota: Ya NO ponemos "assets/" porque la carpeta components está en la raíz
-fetch(basePath + 'components/navbar.html')
-    .then(response => {
-        if (!response.ok) throw new Error("No se encontró el navbar");
-        return response.text();
-    })
-    .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-    });
+// =======================================
+// CARGAR NAVBAR
+// =======================================
 
-// 3. Cargar el Footer
-fetch(basePath + 'components/footer.html')
-    .then(response => {
-        if (!response.ok) throw new Error("No se encontró el footer");
-        return response.text();
-    })
-    .then(data => {
-        document.getElementById('footer').innerHTML = data;
-    });
+fetch(basePath + "components/navbar.html")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("No se pudo cargar el navbar");
+    }
+    return response.text();
+  })
+  .then(html => {
+    const navbarContainer = document.getElementById("navbar");
+    if (!navbarContainer) return;
+
+    navbarContainer.innerHTML = html;
+
+    // 👉 AVISAR QUE EL NAVBAR YA ESTÁ LISTO
+    document.dispatchEvent(new Event("navbarLoaded"));
+  })
+  .catch(error => console.error(error));
+
+// =======================================
+// CARGAR FOOTER
+// =======================================
+
+fetch(basePath + "components/footer.html")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("No se pudo cargar el footer");
+    }
+    return response.text();
+  })
+  .then(html => {
+    const footerContainer = document.getElementById("footer");
+    if (!footerContainer) return;
+
+    footerContainer.innerHTML = html;
+  })
+  .catch(error => console.error(error));
