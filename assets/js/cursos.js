@@ -38,12 +38,36 @@ const cursos = [
   
 
 ];
-function agregarAlCarrito(titulo, precio) {
- alert(`Curso "${titulo}" agregado al carrito por $${precio.toLocaleString("es-CL")}`); 
- 
+// Carrito de compras
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  
+function guardarCarrito() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarContadorCarrito();
 }
+
+function agregarAlCarrito(titulo, precio) {
+  const existe = carrito.some(curso => curso.titulo === titulo);
+
+  if (existe) {
+    alert("Este curso ya está en el carrito 💡");
+    return;
+  }
+
+  carrito.push({ titulo, precio });
+  guardarCarrito();
+  alert(`💖 "${titulo}" agregado al carrito`);
+}
+
+function actualizarContadorCarrito() {
+  const contador = document.getElementById("carrito-contador");
+  if (!contador) return;
+  contador.textContent = carrito.length;
+}
+
+
+
+document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
 
 const contenedor = document.getElementById("catalogo-cursos-js");
 
