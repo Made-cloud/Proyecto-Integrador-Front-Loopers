@@ -38,36 +38,8 @@ const cursos = [
   
 
 ];
-// Carrito de compras
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-function guardarCarrito() {
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  actualizarContadorCarrito();
-}
-
-function agregarAlCarrito(titulo, precio) {
-  const existe = carrito.some(curso => curso.titulo === titulo);
-
-  if (existe) {
-    alert("Este curso ya está en el carrito 💡");
-    return;
-  }
-
-  carrito.push({ titulo, precio });
-  guardarCarrito();
-  alert(`💖 "${titulo}" agregado al carrito`);
-}
-
-function actualizarContadorCarrito() {
-  const contador = document.getElementById("carrito-contador");
-  if (!contador) return;
-  contador.textContent = carrito.length;
-}
 
 
-
-document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
 
 const contenedor = document.getElementById("catalogo-cursos-js");
 
@@ -81,9 +53,11 @@ cursos.forEach(curso => {
       <h3 class="card__title">${curso.titulo}</h3>
       <p class="card__description">${curso.descripcion}</p>
       <p class="card__price">$${curso.precio.toLocaleString("es-CL")}</p>
-      <button onclick="agregarAlCarrito('${curso.titulo}', ${curso.precio})" class="btn btn-primary agregar-carrito" data-titulo="${curso.titulo}" data-precio="${curso.precio}">Agregar al carrito</button>
+     <button onclick="agregarAlCarrito('${curso.titulo}', ${curso.precio})" class="btn btn-primary agregar-carrito" data-titulo="${curso.titulo}" data-precio="${curso.precio}">Agregar al carrito</button>
     </div>
   `;
-
+ 
   contenedor.appendChild(card);
+
+  
 });
