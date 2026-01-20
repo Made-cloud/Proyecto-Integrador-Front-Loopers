@@ -1,61 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Exportify</title>
-    <link rel="stylesheet" href="../assets/css/cursos.css">
-    <script src="../assets/js/cursos.js" defer></script>
-    <script src="assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Exportify</title>
+
+  <link rel="stylesheet" href="../assets/css/cursos.css">
+  <script src="../assets/js/cursos.js" defer></script>
+
 </head>
-<div id="navbar"></div>
 
 <body class="catalogo-body">
-    
-    <main>
 
-        <!-- HERO CATÁLOGO -->
-        <section class="hero hero--catalogo">
-            <div class="hero__content">
-                <h1 class="hero__title">Catálogo de herramientas para exportar</h1>
-                <p class="hero__subtitle">
-                    Explora nuestros productos, certificaciones, cursos y recursos para llegar a nuevos mercados.
-                </p>
-                <a href="#catalogo-cursos" class="btn btn-primary hero__cta">Ver cursos disponibles</a>
-            </div>
-        </section>
+  <div id="navbar"></div>
 
-        <!-- SECCIÓN CATÁLOGO -->
-        <section class="section section--light" id="catalogo-cursos">
-            <div class="section__header">
-                <h2 class="section__title">Nuestros cursos</h2>
-               
-            </div>
+  <main>
 
-            <div class="catalogo-grid">
-                
-               <div class="catalogo-grid" id="catalogo-cursos-js"></div>
-            
-    
+    <!-- HERO -->
+    <section class="hero hero--catalogo">
+      <div class="hero__content">
+        <h1 class="hero__title">Catálogo de herramientas para exportar</h1>
+        <p class="hero__subtitle">
+          Explora nuestros productos, certificaciones, cursos y recursos para llegar a nuevos mercados.
+        </p>
+        <a href="#catalogo-cursos" class="btn btn-primary hero__cta">
+          Ver cursos disponibles
+        </a>
+      </div>
+    </section>
 
-            </div>
-        </section>
-    </main>
-    
-    <div id="footer"></div>
-    <span id="carrito-contador">0</span>
-    
-    <script src="../assets/js/layout.js"></script>
-    <script src="../assets/js/cursos.js"></script>
-    <script src="../js/carrito.js"></script>
+    <!-- CATÁLOGO -->
+    <section class="section section--light" id="catalogo-cursos">
+      <div class="section__header">
+        <h2 class="section__title">Nuestros cursos</h2>
+      </div>
 
-    <!-- Bootstrap (si lo necesitas) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- 👇 ESTE ES EL CONTENEDOR ÚNICO -->
+      <div id="catalogo-cursos-js" class="catalogo-grid"></div>
+
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="../assets/js/layout.js"></script>
+ <script src="../assets/js/carrito.js"></script>
 
 </body>
 </html>
-
-<!-- TAREA PARA MADRE: 
-  AJUSTAR EL SECTION HERO A LA PALETA DE COLORES -->
