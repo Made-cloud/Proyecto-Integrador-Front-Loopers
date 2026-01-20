@@ -9,7 +9,7 @@ body {
     background-color: var(--lila-bg);
     width: 100%;
     overflow-x: hidden;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ==========================

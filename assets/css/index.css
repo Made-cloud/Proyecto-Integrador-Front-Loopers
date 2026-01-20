@@ -12,13 +12,16 @@
     --text-color: #333;
     /*Color neutro de fondo*/
     --back-color: #efeaf5;
+    
 }
+
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ==========================

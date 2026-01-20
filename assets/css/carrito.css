@@ -21,7 +21,7 @@
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
 }
 
