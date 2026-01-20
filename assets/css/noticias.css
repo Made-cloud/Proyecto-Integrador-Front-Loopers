@@ -98,6 +98,16 @@ main.container {
   padding: 3rem 1.5rem;
 }
 
+.news-hero {
+  background: linear-gradient(135deg, #f5ea59, #f189bd);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
 /* ==========================
    HEADER CENTRADO (CLAVE)
 ========================== */
@@ -115,14 +125,15 @@ main.container {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.6rem, 5vw, 3.6rem);
   font-weight: 800;
-  color: var(--primary);
+  color: white;
+  letter-spacing: 0.6rem;
 }
 
 /* SUBTÍTULO */
 .page-subtitle {
   max-width: 620px;
   font-size: 1.125rem;
-  color: var(--text-secondary);
+  color: white;
 }
 
 /* ==========================

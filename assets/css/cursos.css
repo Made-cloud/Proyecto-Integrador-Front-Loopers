@@ -129,12 +129,12 @@ header {
    HERO CATÁLOGO
 ========================== */
 .catalogo-body .hero--catalogo {
-  background: linear-gradient(135deg, #f5ea59, #f189bd); /* Degradado Amarillo/Rosado */
+      background: linear-gradient(135deg, #f5ea59, #f189bd);
     color: white;
     text-align: center;
     padding: 70px 20px;
     margin-bottom: 50px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .catalogo-body .hero__content {
@@ -147,7 +147,7 @@ header {
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.6rem;
   margin-bottom: 10px;
 }
 
@@ -155,7 +155,7 @@ header {
   font-size: 1rem;
   max-width: 520px;
   margin: 0 auto 28px;
-  color: var(--color-text-muted);
+  color: white;
 }
 
 /* CTA del hero */
