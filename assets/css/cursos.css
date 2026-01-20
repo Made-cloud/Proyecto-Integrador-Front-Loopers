@@ -22,6 +22,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Estilos específicos para el cuerpo del catálogo */
@@ -86,7 +87,7 @@
    HERO CATÁLOGO
 ========================== */
 .catalogo-body .hero--catalogo {
-      background: linear-gradient(135deg, #f5ea59, #f189bd);
+    background: linear-gradient(135deg, #f5ea59, #f189bd);
     color: white;
     text-align: center;
     padding: 70px 20px;

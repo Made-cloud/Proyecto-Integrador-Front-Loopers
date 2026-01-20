@@ -20,14 +20,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ==========================
             BODY
 ========================== */
 
-/*ESTILO BODY*/
+/*ES*/
 body {
     background: linear-gradient(135deg, #f5ea59, #f189bd);
     min-height: 100vh;
@@ -37,17 +37,44 @@ body {
 }
 
 /* ==========================
-    FORMULARIO LOGIN
+   FORMULARIO LOGIN
 ========================== */
 
-/*ESTILO FORMULARIO*/
+/*FORMATO CONTENEDOR*/
 .container {
     width: 100%;
     max-width: 500px;
     margin: 40px auto;
 }
 
-/* Tarjeta de login */
+/*FORMATO LOGO SESIÓN*/
+.logo-session {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb; /* azul */
+  border-radius: 50%;
+}
+
+/* ENCABEZADO */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ÍCONO SVG */
+.logo-session svg {
+  width: 38px;
+  height: 38px;
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* TARJETA DE LOGIN */
 .login-card {
     background-color: white;
     border-radius: 20px;
@@ -68,11 +95,6 @@ body {
     }
 }
 
-/* Encabezado */
-.header {
-    text-align: center;
-    margin-bottom: 30px;
-}
 
 .logo-session {
     background: linear-gradient(135deg, #083d77 0%, #2575fc 100%);
@@ -101,7 +123,7 @@ body {
     font-size: 14px;
 }
 
-/* Formulario */
+/* FORMULARIO */
 .login-form {
     margin-bottom: 30px;
 }
@@ -217,7 +239,7 @@ body {
     transform: none;
 }
 
-/* Enlaces */
+/* ENLACES */
 .links {
     display: flex;
     justify-content: space-between;
@@ -239,7 +261,7 @@ body {
     text-decoration: underline;
 }
 
-/* Mensajes de error y éxito */
+/* MENSAJES DE ERROR Y ÉXITO */
 .error-message {
     color: #e74c3c;
     font-size: 14px;
@@ -282,7 +304,7 @@ body {
     to { opacity: 1; }
 }
 
-/* Usuarios de prueba */
+/* USUARIOS DE PRUEBA */
 .test-users {
     background-color: #f8f9ff;
     border-radius: 12px;
@@ -322,7 +344,7 @@ body {
     color: #083d77;
 }
 
-/* Estado */
+/* ESTADO/STATUS */
 .status {
     display: flex;
     justify-content: space-between;
@@ -344,17 +366,7 @@ body {
     color: #083d77;
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    color: white;
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
-    width: 100%;
-}
-
-/*Time*/
+/* TIEMPO */
 
 .time {
     align-items: center;
@@ -410,7 +422,7 @@ body {
     box-shadow: 0 10px 20px rgba(255, 65, 108, 0.2);
 }
 
-/* Responsive */
+/* RESPONSIVO */
 @media (max-width: 600px) {
     .login-card {
         padding: 30px 25px;
