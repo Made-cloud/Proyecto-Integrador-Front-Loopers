@@ -1,9 +1,6 @@
 /* ==========================
    VARIABLES Y RESET
 ========================== */
-/* ==========================
-   ROOT
-========================== */
 :root {
     /* Un rosa fuerte profesional */
     --primary-color: #ff9cce;
@@ -15,17 +12,29 @@
     --text-color: #333;
     /*Color neutro de fondo*/
     --back-color: #efeaf5;
+  /**variables de card cursos */
+  --color-bg: #f4f2fa;
+  --color-surface: #ffffff;
+  --color-surface-soft: #faf7ff;
+
+  --color-text-main: #1f1630;
+  --color-text-muted: #6b6275;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+
+  --shadow-sm: 0 10px 25px rgba(0,0,0,0.08);
+  --shadow-md: 0 14px 35px rgba(0,0,0,0.12);
+    
 }
 
 * {
-    margin: 0;
+   margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilos específicos para el cuerpo del catálogo */
 .catalogo-body {
     background-color: var(--back-color);
     color: var(--text-color);
@@ -37,44 +46,16 @@
 }
 
 
+
+
 /* ==========================
    HERO SECTION
 ========================== */
-/* ==========================
-   VARIABLES Y RESET
-========================== */
-.hero--catalogo{
-  --color-bg: #f4f2fa;
-  --color-surface: #ffffff;
-  --color-surface-soft: #faf7ff;
 
-  --color-text-main: #1f1630;
-  --color-text-muted: #6b6275;
-
-  --color-primary: #0b4f8f;      /* Azul exportify */
-  --color-primary-soft: #e0edff;
-
-  --color-accent: #7a4bff;       /* Morado botones */
-  --color-accent-hover: #6432f7;
-
-  --radius-lg: 18px;
-  --radius-md: 12px;
-
-  --shadow-sm: 0 10px 25px rgba(0,0,0,0.08);
-  --shadow-md: 0 14px 35px rgba(0,0,0,0.12);
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Asegura que TODO el CSS solo afecte al catálogo */
 .catalogo-body {
-  font-family: system-ui, sans-serif;
+  font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--color-bg);
   color: var(--color-text-main);
   display: flex;
@@ -87,12 +68,12 @@
    HERO CATÁLOGO
 ========================== */
 .catalogo-body .hero--catalogo {
-    background: linear-gradient(135deg, #f5ea59, #f189bd);
+  background: linear-gradient(135deg, #f5ea59, #f189bd); /* Degradado Amarillo/Rosado */
     color: white;
     text-align: center;
     padding: 70px 20px;
     margin-bottom: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .catalogo-body .hero__content {
@@ -105,7 +86,7 @@
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.05em;
   margin-bottom: 10px;
 }
 
@@ -113,7 +94,7 @@
   font-size: 1rem;
   max-width: 520px;
   margin: 0 auto 28px;
-  color: white;
+  color: var(--color-text-muted);
 }
 
 /* CTA del hero */
@@ -184,7 +165,7 @@
    CARDS
 ========================== */
 .catalogo-body .card {
-  background: var(--color-surface-soft);
+  background: whitesmoke;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -267,7 +248,7 @@
 .catalogo-body .card__btn {
   padding: 10px 20px;
   background: var(--color-primary);
-  color: #fff;
+  color: #ffffff;
   border-radius: var(--radius-md);
   font-weight: 600;
   text-decoration: none;
@@ -276,16 +257,10 @@
 }
 
 .catalogo-body .card__btn:hover {
-  background: #063a6b;
+  background: #063a6bb9;
   transform: translateY(-2px);
 }
 
-/* ==========================
-   FOOTER (solo estilo interno)
-========================== */
-.catalogo-body .site-footer {
-  margin-top: auto;
-}
 
 /* ==========================
    RESPONSIVE
@@ -311,15 +286,5 @@
   }
 }
 
-.catalogo-body .btn.btn-primary.agregar-carrito {
-  margin-top: 12px;
-  padding: 10px 16px;
-  background-color: var(--color-accent);
-  color: var(--color-blanco);
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  
-}
+/* ==========================
+   FIN CSS CATÁLOGO
