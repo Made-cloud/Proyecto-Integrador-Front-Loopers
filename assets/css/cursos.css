@@ -1,29 +1,33 @@
 /* ==========================
    VARIABLES Y RESET
 ========================== */
+/* ==========================
+   ROOT
+========================== */
 :root {
-    --color-fondo: #efeaf5;
-    --color-texto: #78647d;
-    --color-primario: #1c66b5;
-    --color-secundario: #ff9cce;
-    --color-card: #dcc0ff;
-    --color-blanco: #ffffff;
-    --color-hover: #ff9cce;
-    --color-boton: #6f42c1;
-    --sombra: 0 2px 10px rgba(7, 7, 7, 0.1);
-    --sombra-card: 0 6px 18px rgba(0, 0, 0, 0.5);
-    --border-radius: 16px;
+    /* Un rosa fuerte profesional */
+    --primary-color: #ff9cce;
+    /* Azul oscuro para contraste */
+    --secondary-color: #083d77; 
+    /*Blanco Central*/
+    --accent-color: #f8f9fa; 
+    /*Color de texto grisáceo*/
+    --text-color: #333;
+    /*Color neutro de fondo*/
+    --back-color: #efeaf5;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Estilos específicos para el cuerpo del catálogo */
 .catalogo-body {
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
+    background-color: var(--back-color);
+    color: var(--text-color);
     line-height: 1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
@@ -31,53 +35,6 @@
     flex-direction: column;
 }
 
-/* ==========================
-   HEADER Y NAVEGACIÓN
-========================== */
-/* Se arregla dimensiones del navbar ya que esta linkeado de manera independinete como componente */
-/* ==========================
-   HEADER
-========================== */
-header {
-    background-color: #083d77;
-    box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.logo span {
-    color: #ff9cce;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 200;
-    transition: color 0.3s;
-    letter-spacing: 0.2rem;
-}
-
-.nav-links a:hover {
-    color: #ff9cce;
-}
 
 /* ==========================
    HERO SECTION
@@ -85,7 +42,7 @@ header {
 /* ==========================
    VARIABLES Y RESET
 ========================== */
-:root {
+.hero--catalogo{
   --color-bg: #f4f2fa;
   --color-surface: #ffffff;
   --color-surface-soft: #faf7ff;
