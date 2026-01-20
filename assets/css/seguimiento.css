@@ -4,14 +4,18 @@
 ========================== */
 
 :root {
-    --color-fondo: #efeaf5;
-    --color-texto: #78647d;
-    --color-primario: #1c66b5;
-    --color-secundario: #ff9cce;
-    --color-card: #dcc0ff;
-    --color-blanco: #ffffff;
-    --color-hover: #ff9cce;
-    --color-boton: #6f42c1;
+    :root {
+    /* Un rosa fuerte profesional */
+    --primary-color: #ff9cce;
+    /* Azul oscuro para contraste */
+    --secondary-color: #083d77; 
+    /*Blanco Central*/
+    --accent-color: #f8f9fa; 
+    /*Color de texto grisáceo*/
+    --text-color: #333;
+    /*Color neutro de fondo*/
+    --back-color: #efeaf5;
+
     --sombra: 0 2px 10px rgba(7, 7, 7, 0.1);
     --sombra-card: 0 6px 18px rgba(0, 0, 0, 0.5);
     --border-radius: 16px;
