@@ -24,7 +24,7 @@
 /* ==========================
    BODY
 ========================== */
-/*FONDO BODY (ESTA CONFIGURACIÓN ES SOLAMENTE PARA INDEX)*/
+/*FONDO BODY (ESTA CONFIGURACIÓN ES SOLAMENTE PARA INDEX, EN LAS OTRAS PÁGINAS ES EL HEADER O SECCION HERO)*/
 body {
     background: linear-gradient(135deg, #f5ea59, #f189bd);
     min-height: 100vh;
