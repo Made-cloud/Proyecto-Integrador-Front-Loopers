@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad</title>
+    <link rel="stylesheet" href="../assets/css/comunidad.css">
+    <script src="../assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
+<script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/cursos.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+
+
+<div class="container fade-in-up" style="margin-top: 40px;">
+    
+    <div class="comunidad-grid">
+        
+        <aside class="sidebar-izq">
+            <div class="exportify-card">
+                <h4><i class="fas fa-fire highlight"></i> Tendencias</h4>
+                <ul class="lista-tendencias">
+                    <li>#Logística <span class="tag">Nuevo</span></li>
+                    <li>#MujeresTech</li>
+                    <li>#AduanasChile</li>
+                </ul>
+            </div>
+
+            <div class="exportify-card">
+                <h4>Seguidos</h4>
+                <ul id="lista-seguidos" class="lista-seguidos-vertical"></ul>
+            </div>
+        </aside>
+
+        <main class="feed-central">
+            <div class="search-bar-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar en la comunidad...">
+            </div>
+
+            <div id="contenedor-publicaciones">
+                </div>
+        </main>
+
+        <aside class="sidebar-der">
+            <div class="exportify-card perfil-card">
+                <div class="bg-pattern"></div>
+                <img src="https://i.pravatar.cc/150?img=12" class="avatar-grande" alt="Francisco">
+                <h3>Francisco Lertora</h3>
+                <p class="role">Frontend Dev</p>
+                <div class="botones-perfil">
+                    <button class="btn-outline">Ver Perfil</button>
+                    <button class="btn-text">Cerrar Sesión</button>
+                </div>
+            </div>
+
+            <div class="exportify-card publicar-widget">
+                <p>¿Tienes algo que compartir?</p>
+                <button class="btn-full-width" id="btn-abrir-modal">
+                    <i class="fas fa-plus"></i> Crear Publicación
+                </button>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+    <div class="modal-overlay" id="reviewModal">
+        <div class="modal-content">
+            <span class="modal-close" id="btnCloseModal">&times;</span>
+            <h2>Nueva Publicación</h2>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="inputText">¿Qué estás pensando?</label>
+                    <textarea id="inputText" rows="4" required placeholder="Comparte tu experiencia..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputImage">Subir imagen (Opcional)</label>
+                    <input type="file" id="inputImage" accept="image/*">
+                </div>
+               
+                <button type="submit" class="btn-submit">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    
+    <script src="../assets/js/layout.js"></script>
+    <script type="module" src="../assets/js/comunidad/main.js"></script>
+</body>
+</html>
+
+ <!-- TAREA PARA OSCAR: 
+  HAY QUE HACER EL SECTION HERO COMO LAS DEMÁS PÁGINAS -->

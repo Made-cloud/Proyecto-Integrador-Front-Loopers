@@ -1,0 +1,60 @@
+    /* Estilos específicos del formulario de contacto */
+    body {
+      background-color: #f8f9fa;
+      padding-top: 80px; /* Ajustado para compensar el header fijo */
+    }
+
+    .contact-form-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form-container h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact-form-container p {
+      margin-bottom: 20px;
+    }
+
+    .contact-form-container .form-group {
+      margin-bottom: 15px;
+    }
+
+    .contact-form-container label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .contact-form-container input,
+    .contact-form-container textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 4px;
+      border: 1px solid #ced4da;
+    }
+
+    .contact-form-container textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form-container .btn-primary {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #0d6efd;
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .contact-form-container .btn-primary:hover {
+      background-color: #0b5ed7;
+    }
