@@ -5,16 +5,22 @@ meta {
 }
 
 post {
-  url: {{local}}/productos
+  url: http://localhost:8080/products
   body: json
-  auth: inherit
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmEyQHRlc3QuY29tIiwiaWF0IjoxNzY5MDg4MzI4LCJleHAiOjE3NjkwOTE5Mjh9.uXMp3wbDAMZc1V6jFPJS07Tj3KUdsvy7_GbMm2QVw9E
 }
 
 body:json {
   {
-    "nombre":"Nombre",
-    "precio": 10.2,
-    "stock": 10
+    "name": "Curso Java Avanzado",
+    "description": "Aprende Spring Boot desde cero",
+    "price": 99.99,
+    "stock": 100,
+    "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
   }
 }
 

@@ -1,15 +1,13 @@
 package com.exportify.features.products.service;
 
-import com.exportify.dto.ProductoRequest;
-import com.exportify.dto.ProductoResponse;
-
+import com.exportify.features.products.dto.ProductRequest;
+import com.exportify.features.products.dto.ProductResponse;
 import java.util.List;
 
 public interface ProductsService {
-    ProductoResponse crearProducto(ProductoRequest request);
-    ProductoResponse obtenerProducto(Long id);
-    List<ProductoResponse> listarProductos();
-    void eliminarProducto(Long id);
-    ProductoResponse actualizarProducto(Long id, ProductoRequest request);
-
+    ProductResponse createProduct(ProductRequest request);
+    ProductResponse getProductById(Long id);
+    List<ProductResponse> getAllProducts();
+    ProductResponse updateProduct(Long id, ProductRequest request);
+    void deleteProduct(Long id);
 }
