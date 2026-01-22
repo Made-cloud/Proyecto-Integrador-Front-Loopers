@@ -223,3 +223,95 @@
   min-width: 18px;
   text-align: center;
 }
+
+
+/* --- ESTILOS DEL MENÚ DE USUARIO (DROPDOWN) --- */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #003366;
+}
+
+/* Iconos dentro del menú */
+.dropdown-content i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Clase para mostrar el menú */
+.show {
+    display: block;
+}
+
+/* =========================================
+   ESTILOS FALTANTES PARA EL BOTÓN DE USUARIO
+   ========================================= */
+
+/* El contenedor del botón redondeado */
+.user-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Un poco menos de espacio para que quede compacto */
+    
+    /* TU DEGRADADO ORIGINAL ROSADO */
+    background: linear-gradient(135deg, #ff9cce, #f472b6);
+    
+    /* Tu color de texto azul oscuro */
+    color: #083d77;
+    
+    padding: 6px 16px;
+    border-radius: 999px; /* Bordes redondos estilo pastilla */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none; /* Sin borde extra, el degradado es suficiente */
+}
+
+/* Efecto Hover: Lo hacemos brillar un poquito más */
+.user-trigger:hover {
+    filter: brightness(1.05); /* Se ilumina sutilmente */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(244, 114, 182, 0.4); /* Sombra rosada suave */
+}
+
+/* Texto del usuario */
+.user-trigger span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #083d77; /* Aseguramos que el texto sea tu azul corporativo */
+}
+
+/* Ajuste de iconos para que combinen */
+.user-trigger i {
+    color: #083d77 !important; /* Los iconos también en azul para que resalten sobre el rosa */
+}

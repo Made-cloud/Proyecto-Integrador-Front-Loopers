@@ -433,3 +433,21 @@ body {
         font-size: 24px;
     }
 }
+
+/* --- VALIDACIÓN EN TIEMPO REAL --- */
+.input-error {
+    border-color: #ff4d4d !important;
+    background-color: #fff0f0;
+}
+
+.input-success {
+    border-color: #2ecc71 !important;
+    background-color: #f0fff4;
+}
+
+.match-message {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 500;
+    display: block;
+}
