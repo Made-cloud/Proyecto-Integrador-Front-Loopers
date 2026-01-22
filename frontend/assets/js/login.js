@@ -143,6 +143,7 @@ async function handleAuth(event, endpoint) {
 
     } catch (error) {
         console.error(error);
+<<<<<<< HEAD
         // Alerta de Error de Conexión
         Swal.fire({
             icon: 'error',
@@ -189,4 +190,21 @@ function setupPasswordToggles() {
             }
         });
     });
+=======
+        mostrarError("No se pudo conectar con el servidor.");
+    } finally {
+        btnSubmit.disabled = false;
+        btnSubmit.innerText = textoOriginal;
+    }
+}
+
+function mostrarError(mensaje) {
+    const errorDiv = document.getElementById('generalError');
+    if (errorDiv) {
+        errorDiv.textContent = mensaje;
+        errorDiv.classList.add('show');
+    } else {
+        alert(mensaje);
+    }
+>>>>>>> 6217210c0c92d5e48c0476ab1573c8817507bf42
 }
