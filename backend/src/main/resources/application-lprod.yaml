@@ -1,0 +1,14 @@
+#Configuracion Local( usando nuestro Docker y MySQL)
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+# Para activar hibernate DDL auto y forzar a spring a que use nuestros scrips
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform: org.postgresql.Driver

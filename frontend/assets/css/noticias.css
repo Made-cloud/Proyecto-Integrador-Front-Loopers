@@ -1,0 +1,608 @@
+<<<<<<< HEAD:frontend/assets/css/noticias.css
+/* ==========================
+   RESET
+========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+    background-color: #083d77;
+    box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo span {
+    color: #ff9cce;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 200;
+    transition: color 0.3s;
+    letter-spacing: 0.2rem;
+}
+
+.nav-links a:hover {
+    color: #ff9cce;
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+:root {
+  --primary: #1a365d;
+  --primary-light: #2b4a7c;
+  --secondary: #38b2ac;
+  --accent: #ed8936;
+
+  --background: #f7fafc;
+  --surface: #ffffff;
+
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+
+  --border: #e2e8f0;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  --radius: 14px;
+  --transition: all 0.3s ease;
+}
+
+/* ==========================
+   BASE
+========================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ==========================
+   CONTENEDOR
+========================== */
+main.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ==========================
+   HEADER CENTRADO (CLAVE)
+========================== */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* TÍTULO */
+.page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* SUBTÍTULO */
+.page-subtitle {
+  max-width: 620px;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================
+   FILTROS
+========================== */
+.news-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary-light);
+}
+
+.filter-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* ==========================
+   GRID DE NOTICIAS
+========================== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+/* ==========================
+   TARJETA
+========================== */
+.news-card {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.news-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card-content {
+  padding: 1.5rem;
+}
+
+/* ==========================
+   TEXTO TARJETA
+========================== */
+.news-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-excerpt {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================
+   META
+========================== */
+.news-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================
+   LOAD MORE
+========================== */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+.load-more-btn {
+  padding: 1rem 2.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.load-more-btn:hover {
+  background-color: var(--primary-light);
+}
+
+/* ==========================
+   ANIMACIÓN
+========================== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  main.container {
+    padding: 2rem 1rem;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* FIX ANTI-CSS VIEJO: evita que un header global pinte el header de página */
+.page-header {
+  background: transparent !important;
+  position: static !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+/* Asegura que el contenido de Noticias no sea afectado por containers globales */
+main.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 3rem 1.5rem !important;
+}
+
+=======
+/* ==========================
+   RESET
+========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+    background-color: #083d77;
+    box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo span {
+    color: #ff9cce;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 200;
+    transition: color 0.3s;
+    letter-spacing: 0.2rem;
+}
+
+.nav-links a:hover {
+    color: #ff9cce;
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+:root {
+  --primary: #1a365d;
+  --primary-light: #2b4a7c;
+  --secondary: #38b2ac;
+  --accent: #ed8936;
+
+  --background: #f7fafc;
+  --surface: #ffffff;
+
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+
+  --border: #e2e8f0;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  --radius: 14px;
+  --transition: all 0.3s ease;
+}
+
+/* ==========================
+   BASE
+========================== */
+body {
+  font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ==========================
+   CONTENEDOR
+========================== */
+main.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.news-hero {
+  background: linear-gradient(135deg, #f5ea59, #f189bd);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==========================
+   HEADER CENTRADO (CLAVE)
+========================== */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* TÍTULO */
+.page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.6rem;
+}
+
+/* SUBTÍTULO */
+.page-subtitle {
+  max-width: 620px;
+  font-size: 1.125rem;
+  color: white;
+}
+
+/* ==========================
+   FILTROS
+========================== */
+.news-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary-light);
+}
+
+.filter-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* ==========================
+   GRID DE NOTICIAS
+========================== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+/* ==========================
+   TARJETA
+========================== */
+.news-card {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.news-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card-content {
+  padding: 1.5rem;
+}
+
+/* ==========================
+   TEXTO TARJETA
+========================== */
+.news-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-excerpt {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================
+   META
+========================== */
+.news-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================
+   LOAD MORE
+========================== */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+.load-more-btn {
+  padding: 1rem 2.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.load-more-btn:hover {
+  background-color: var(--primary-light);
+}
+
+/* ==========================
+   ANIMACIÓN
+========================== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  main.container {
+    padding: 2rem 1rem;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* FIX ANTI-CSS VIEJO: evita que un header global pinte el header de página */
+.page-header {
+  background: transparent !important;
+  position: static !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+/* Asegura que el contenido de Noticias no sea afectado por containers globales */
+main.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 3rem 1.5rem !important;
+}
+
+>>>>>>> 9fb28981773e79eb989174a0e1694ed945ffe439:assets/css/noticias.css
