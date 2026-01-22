@@ -2,90 +2,17 @@
    VARIABLES Y RESET
 ========================== */
 :root {
-    --color-fondo: #efeaf5;
-    --color-texto: #78647d;
-    --color-primario: #1c66b5;
-    --color-secundario: #ff9cce;
-    --color-card: #dcc0ff;
-    --color-blanco: #ffffff;
-    --color-hover: #ff9cce;
-    --color-boton: #6f42c1;
-    --sombra: 0 2px 10px rgba(7, 7, 7, 0.1);
-    --sombra-card: 0 6px 18px rgba(0, 0, 0, 0.5);
-    --border-radius: 16px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.catalogo-body {
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    line-height: 1.6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ==========================
-   HEADER Y NAVEGACIÓN
-========================== */
-/* Se arregla dimensiones del navbar ya que esta linkeado de manera independinete como componente */
-/* ==========================
-   HEADER
-========================== */
-header {
-    background-color: #083d77;
-    box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.logo span {
-    color: #ff9cce;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 200;
-    transition: color 0.3s;
-    letter-spacing: 0.2rem;
-}
-
-.nav-links a:hover {
-    color: #ff9cce;
-}
-
-/* ==========================
-   HERO SECTION
-========================== */
-/* ==========================
-   VARIABLES Y RESET
-========================== */
-:root {
+    /* Un rosa fuerte profesional */
+    --primary-color: #ff9cce;
+    /* Azul oscuro para contraste */
+    --secondary-color: #083d77; 
+    /*Blanco Central*/
+    --accent-color: #f8f9fa; 
+    /*Color de texto grisáceo*/
+    --text-color: #333;
+    /*Color neutro de fondo*/
+    --back-color: #efeaf5;
+  /**variables de card cursos */
   --color-bg: #f4f2fa;
   --color-surface: #ffffff;
   --color-surface-soft: #faf7ff;
@@ -93,30 +20,42 @@ header {
   --color-text-main: #1f1630;
   --color-text-muted: #6b6275;
 
-  --color-primary: #0b4f8f;      /* Azul exportify */
-  --color-primary-soft: #e0edff;
-
-  --color-accent: #7a4bff;       /* Morado botones */
-  --color-accent-hover: #6432f7;
-
   --radius-lg: 18px;
   --radius-md: 12px;
 
   --shadow-sm: 0 10px 25px rgba(0,0,0,0.08);
   --shadow-md: 0 14px 35px rgba(0,0,0,0.12);
+    
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.catalogo-body {
+    background-color: var(--back-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* ==========================
+   HERO SECTION
+========================== */
+
 
 /* Asegura que TODO el CSS solo afecte al catálogo */
 .catalogo-body {
-  font-family: system-ui, sans-serif;
+  font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--color-bg);
   color: var(--color-text-main);
   display: flex;
@@ -226,7 +165,7 @@ header {
    CARDS
 ========================== */
 .catalogo-body .card {
-  background: var(--color-surface-soft);
+  background: whitesmoke;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -309,7 +248,7 @@ header {
 .catalogo-body .card__btn {
   padding: 10px 20px;
   background: var(--color-primary);
-  color: #fff;
+  color: #ffffff;
   border-radius: var(--radius-md);
   font-weight: 600;
   text-decoration: none;
@@ -318,16 +257,10 @@ header {
 }
 
 .catalogo-body .card__btn:hover {
-  background: #063a6b;
+  background: #063a6bb9;
   transform: translateY(-2px);
 }
 
-/* ==========================
-   FOOTER (solo estilo interno)
-========================== */
-.catalogo-body .site-footer {
-  margin-top: auto;
-}
 
 /* ==========================
    RESPONSIVE
@@ -353,15 +286,5 @@ header {
   }
 }
 
-.catalogo-body .btn.btn-primary.agregar-carrito {
-  margin-top: 12px;
-  padding: 10px 16px;
-  background-color: var(--color-accent);
-  color: var(--color-blanco);
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  
-}
+/* ==========================
+   FIN CSS CATÁLOGO

@@ -2,20 +2,33 @@
    ESTILOS ABOUT US - FUSIÓN FINAL
    Colores Fijos: Azul (#083d77), Rosado (#ff9cce), Hero (Amarillo/Rosado)
 ========================== */
+:root {
+    /* Un rosa fuerte profesional */
+    --primary-color: #ff9cce;
+    /* Azul oscuro para contraste */
+    --secondary-color: #083d77; 
+    /*Blanco Central*/
+    --accent-color: #f8f9fa; 
+    /*Color de texto grisáceo*/
+    --text-color: #333;
+    /*Color neutro de fondo*/
+    --back-color: #efeaf5;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/* Estilo de body para About us*/
 body {
-    background-color: #efeaf5; /* Fondo Lila Suave */
-    color: #78647d; 
-    line-height: 1.6;
+    background-color: var(--back-color);
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -24,49 +37,6 @@ body {
 
 /* Nota: Eliminamos los estilos de 'header' y 'footer' para que usen los archivos separados. */
 
-/* ==========================
-   HEADER
-========================== */
-header {
-    background-color: #083d77;
-    box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.logo span {
-    color: #ff9cce;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 200;
-    transition: color 0.3s;
-    letter-spacing: 0.2rem;
-}
-
-.nav-links a:hover {
-    color: #ff9cce;
-}
 
 /* =========================================
    1. HERO SECTION (Usando el degradado Amarillo/Rosado que señalaste)
@@ -81,10 +51,10 @@ header {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.6rem;
+    letter-spacing: 10px;
 }
 
 /* =========================================
@@ -94,7 +64,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     margin-bottom: 80px;
     background: #ffffff;
     padding: 40px;

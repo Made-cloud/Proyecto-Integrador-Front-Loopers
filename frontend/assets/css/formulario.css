@@ -1,15 +1,35 @@
+/* ==========================
+            ROOT
+========================== */
+:root {
+    /* Un rosa fuerte profesional */
+    --primary-color: #ff9cce;
+    /* Azul oscuro para contraste */
+    --secondary-color: #083d77; 
+    /*Blanco Central*/
+    --accent-color: #f8f9fa; 
+    /*Color de texto grisáceo*/
+    --text-color: #333;
+    /*Color neutro de fondo*/
+    --back-color: #efeaf5;
+}
+
 /* Reset y configuración general */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* ==========================
+            BODY
+========================== */
 
 body {
     background: linear-gradient(135deg, #f5ea59, #f189bd);
     min-height: 100vh;
-        justify-content: center;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -21,48 +41,8 @@ body {
 }
 
 /* ==========================
-   HEADER
+     FORMULARIO REGISTRO
 ========================== */
-header {
-    background-color: #083d77;
-    box-shadow: 0 2px 10px rgba(7, 7, 7, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.logo span {
-    color: #ff9cce;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 200;
-    transition: color 0.3s;
-    letter-spacing: 0.2rem;
-}
-
-.nav-links a:hover {
-    color: #ff9cce;
-}
 
 /* Tarjeta de login */
 .login-card {
