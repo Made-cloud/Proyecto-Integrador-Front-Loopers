@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <title>Navbar</title>
+</head>
+
+<body>
+
+<header id="navbar">
+
+  <!-- Control invisible -->
+  <input type="checkbox" id="menu-toggle">
+
+  <!-- Overlay -->
+  <label for="menu-toggle" class="overlay"></label>
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a href="../index.html" class="logo">
+      <img src="../assets/images/logo-exportify.png" alt="Exportify logo">
+      <span class="logo-text">EXPORTI<span>FY</span></span>
+    </a>
+
+    <!-- Hamburguesa -->
+    <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Acciones -->
+    <div class="nav-actions">
+
+      <!-- Login con texto -->
+      <a href="../pages/login.html" class="login-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 12a5 5 0 1 0-5-5a5 5 0 0 0 5 5z"/>
+          <path d="M4 20a8 8 0 0 1 16 0"/>
+        </svg>
+        <span>Inicia sesión o regístrate</span>
+      </a>
+
+      <!-- Separador -->
+      <span class="nav-divider"></span>
+
+      <!-- Carrito -->
+<!-- Carrito -->
+<a href="../pages/carrito.html" class="cart-btn" aria-label="Carrito">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M3 3h2l2.5 11h9.5l2-8H7"/>
+    <circle cx="10" cy="20" r="1.5"/>
+    <circle cx="17" cy="20" r="1.5"/>
+  </svg>
+
+  <!-- CONTADOR -->
+  <span id="contador" class="cart-count">0</span>
+</a>
+
+
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+
+    <div class="sidebar-logo">
+      <img src="../assets/images/logo-exportify.png" alt="Exportify logo">
+      <span>EXPORTI<span>FY</span></span>
+    </div>
+
+    <ul>
+      <li><a href="../index.html">INICIO</a></li>
+      <li><a href="../pages/aboutUs.html">SOBRE NOSOTROS</a></li>
+      <li><a href="../pages/comunidad.html">COMUNIDAD</a></li>
+      <li><a href="../pages/seguimiento.html">SEGUIMIENTO</a></li>
+      <li><a href="../pages/cursos.html">CURSOS</a></li>
+      <li><a href="../pages/noticias.html">NOTICIAS</a></li>
+      <li><a href="../pages/contacto.html">CONTÁCTENOS</a></li>
+    </ul>
+
+  </nav>
+<script src="../js/carrito.js"></script>
+</header>
+
+</body>
+</html>
