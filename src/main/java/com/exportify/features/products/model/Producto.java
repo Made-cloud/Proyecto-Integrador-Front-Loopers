@@ -1,4 +1,4 @@
-package com.exportify.model;
+package com.exportify.features.products.model;
 
 
 import jakarta.persistence.*;

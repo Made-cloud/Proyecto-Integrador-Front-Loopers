@@ -1,8 +1,8 @@
-package com.exportify.controller;
+package com.exportify.features.products.controler;
 
 import com.exportify.dto.ProductoRequest;
 import com.exportify.dto.ProductoResponse;
-import com.exportify.service.ProductoService;
+import com.exportify.features.products.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductoController {
 
     @Autowired
-    private ProductoService service;
+    private ProductsService service;
 
     @PostMapping
     public ResponseEntity<ProductoResponse> crear(@RequestBody ProductoRequest request) {

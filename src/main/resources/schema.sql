@@ -1,5 +1,5 @@
 -- Tabla: clientes
-CREATE TABLE IF NOT EXISTS clientes (
+CREATE TABLE IF NOT EXISTS Users (
                                         id BIGINT AUTO_INCREMENT PRIMARY KEY,
                                         nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS clientes (
     );
 
 -- Tabla: productos
-CREATE TABLE IF NOT EXISTS productos (
+CREATE TABLE IF NOT EXISTS products (
                                          id BIGINT AUTO_INCREMENT PRIMARY KEY,
                                          nombre VARCHAR(100) NOT NULL,
     precio DECIMAL(10,2) NOT NULL,

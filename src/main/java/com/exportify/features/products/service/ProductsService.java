@@ -1,11 +1,11 @@
-package com.exportify.service;
+package com.exportify.features.products.service;
 
 import com.exportify.dto.ProductoRequest;
 import com.exportify.dto.ProductoResponse;
 
 import java.util.List;
 
-public interface ProductoService {
+public interface ProductsService {
     ProductoResponse crearProducto(ProductoRequest request);
     ProductoResponse obtenerProducto(Long id);
     List<ProductoResponse> listarProductos();

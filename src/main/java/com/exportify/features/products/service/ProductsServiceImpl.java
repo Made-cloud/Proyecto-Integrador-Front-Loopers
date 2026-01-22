@@ -1,9 +1,9 @@
-package com.exportify.service;
+package com.exportify.features.products.service;
 
 import com.exportify.dto.ProductoRequest;
 import com.exportify.dto.ProductoResponse;
-import com.exportify.model.Producto;
-import com.exportify.repository.ProductoRepository;
+import com.exportify.features.products.model.Producto;
+import com.exportify.features.products.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ProductoServiceImpl implements ProductoService {
+public class ProductsServiceImpl implements ProductsService {
 
     @Autowired
-    private ProductoRepository repository;
+    private ProductsRepository repository;
 
     @Override
     public ProductoResponse crearProducto(ProductoRequest request) {
