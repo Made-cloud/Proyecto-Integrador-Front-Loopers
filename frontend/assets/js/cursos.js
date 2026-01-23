@@ -1,36 +1,36 @@
 const cursos = [
   {
-    nombre: "Gestión técnica del proceso de exportación",
+    nombre: "Gestión Técnica del Proceso de Exportación",
     descripcion: "Curso orientado a comprender y ejecutar el flujo completo de una operación de exportación, desde la preparación del producto hasta la salida legal de la mercancía desde Chile, bajo normativa vigente.",
     precio: 50000,
     imagen: "../assets/images/exportacion.jpg"
   },
   {
-    nombre: "Certificaciones",
+    nombre: "Certificaciones y Acreditaciones para la Exportación",
     descripcion: "Análisis de las certificaciones obligatorias y voluntarias requeridas para exportar desde Chile, según tipo de producto y mercado de destino, considerando normativa sanitaria, fitosanitaria y de calidad.",
     precio: 45000,
     imagen: "../assets/images/certificaciones.jpg"
   },
   {
-    nombre: "Marketing digital",
+    nombre: "Marketing <br> Digital",
     descripcion: "Curso enfocado en la estrategia comercial internacional, considerando análisis de mercado, fijación de precios de exportación y posicionamiento digital para mercados externos.",
     precio: 35000,
     imagen: "../assets/images/marketing.png"
   },
   {
-    nombre: "Normativa aduanera y tributaria chilena aplicada a la exportación",
+    nombre: "Normativa Aduanera y Tributaria Chilena Aplicada a la Exportación",
     descripcion: "Estudio detallado de la legislación chilena aplicable a la exportación, con énfasis en cumplimiento tributario, aduanero y documental ante el SII y el Servicio Nacional de Aduanas.",
     precio: 55000,
     imagen: "../assets/images/normativa.jpg"
   },
   {
-    nombre: "Documentación y logística internacional de exportación",
+    nombre: "Documentación y ogística Internacional de Exportación",
     descripcion: "Curso orientado a la gestión documental y logística de exportaciones, considerando medios de transporte, contratos y coordinación con operadores logísticos.",
     precio: 48000,
     imagen: "../assets/images/logistica.jpg"
   },
   {
-    nombre: "Tratados de Libre Comercio y reglas de origen",
+    nombre: "Tratados de Libre Comercio y Reglas de Origen",
     descripcion: "Análisis técnico de los TLC vigentes de Chile, con énfasis en reglas de origen, certificación y beneficios arancelarios aplicables a la exportación.",
     precio: 42000,
     imagen: "../assets/images/financiamiento.jpg"
@@ -48,8 +48,6 @@ function agregarAlCarrito(nombre, precio) {
 
   alert(`💖 "${nombre}" agregado al carrito`);
 }
-
-
 
 
 const contenedor = document.getElementById("catalogo-cursos-js");

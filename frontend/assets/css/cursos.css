@@ -138,6 +138,7 @@
 
 .catalogo-body .section__header {
   text-align: center;
+  padding-bottom: 40px;
 
 }
 
@@ -212,13 +213,15 @@
   font-size: 0.95rem;
   color: var(--color-text-muted);
   text-align: justify;
+  padding-top: 20px;
 }
 
 .catalogo-body .card__price {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--secondary-color);
   margin-top: auto;
+  text-align: center;
 }
 /* ==========================
    ANIMACIÓN ENTRADA CARDS JS
@@ -255,6 +258,22 @@
   text-decoration: none;
   width: fit-content;
   transition: 0.25s ease;
+  border-radius: 30px;
+}
+
+.btn {
+  color: var(--secondary-color);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 30px;
+  border-style:unset;
+  background-color: var(--back-color);
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
 }
 
 .catalogo-body .card__btn:hover {

@@ -55,6 +55,7 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  color: white;
 }
 
 .menu-icon span {
@@ -81,11 +82,15 @@
   padding: 6px 14px;
   border-radius: 999px;
 
-  background: linear-gradient(135deg, #ff9cce, #f472b6);
+  background: white;
   color: #083d77;
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
+}
+
+.login-btn:hover{
+  background-color: #ff9cce;
 }
 
 .login-btn svg {
@@ -112,9 +117,13 @@
   width: 38px;
   height: 38px;
 
-  background: linear-gradient(135deg, #ff9cce, #f472b6);
+  background: white;
   border-radius: 50%;
   text-decoration: none;
+}
+
+.cart-btn:hover {
+  background-color: #ff9cce;
 }
 
 .cart-btn svg {
