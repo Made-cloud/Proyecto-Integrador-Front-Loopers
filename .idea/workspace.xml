@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ce929da-976c-469c-9def-b67f17cbbcfb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/bruno.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/environments/env.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/post/crear post.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/post/eliminar post.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/post/folder.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/post/listar post.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/productos/crear producto.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/productos/folder.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/productos/listar productos.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/users/Registrar Usuario.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/users/folder.bru" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Exportify/users/listar clientes.bru" beforeDir="false" />
-    </list>
+    <list default="true" id="2ce929da-976c-469c-9def-b67f17cbbcfb" name="Changes" comment="" />
     <list id="e1f8c055-bba6-4f57-9c0c-4e91cd91dd1d" name="Changes by Genchile INV_TI_227" comment="" />
     <list id="f42c819e-ca43-4763-a9f8-8b9c8116ce34" name="Changes by GENCHILE INV_TI_327" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,6 +139,7 @@
       <workItem from="1769179828357" duration="42000" />
       <workItem from="1769181549506" duration="25000" />
       <workItem from="1769182107692" duration="212000" />
+      <workItem from="1769182674987" duration="19000" />
     </task>
     <servers />
   </component>
