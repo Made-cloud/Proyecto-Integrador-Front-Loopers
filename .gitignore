@@ -3,9 +3,7 @@ backend/target/
 backend/.idea/
 backend/*.class
 backend/.env
-backend/mvnw
-backend/mvnw.cmd
-backend/.mvn/
+
 
 # --- NODE / FRONTEND ---
 frontend/node_modules/
