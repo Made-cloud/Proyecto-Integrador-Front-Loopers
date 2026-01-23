@@ -1,0 +1,20 @@
+# --- JAVA / BACKEND ---
+backend/target/
+backend/.idea/
+backend/*.class
+backend/.env
+backend/mvnw
+backend/mvnw.cmd
+backend/.mvn/
+
+# --- NODE / FRONTEND ---
+frontend/node_modules/
+frontend/.env
+frontend/package-lock.json
+frontend/.vscode/
+
+# --- SISTEMA ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
