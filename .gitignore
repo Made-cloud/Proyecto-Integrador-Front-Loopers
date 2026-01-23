@@ -1,23 +1,25 @@
-# --- ARCHIVOS DE SISTEMA ---
-.DS_Store
-Thumbs.db
-
-# --- JAVA & SPRING BOOT (Backend) ---
+# --- JAVA / SPRING BOOT ---
 backend/target/
+backend/*.class
 backend/*.log
-backend/.mvn/
-backend/mvnw
-backend/mvnw.cmd
 backend/help.md
 
-# --- IDEs (Configuraciones de tu editor) ---
+# --- NODE / FRONTEND ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# --- CONFIGURACIÓN DE IDE ---
 .idea/
 .vscode/
 *.iml
 *.iws
 *.ipr
 
-# --- SEGURIDAD (¡LO MÁS IMPORTANTE!) ---
+# --- SEGURIDAD ---
 .env
-backend/.env
 **/*.env
+
+# --- SISTEMA ---
+.DS_Store
+Thumbs.db

@@ -2,7 +2,7 @@ package com.exportify.security.service;
 
 import com.exportify.exception.BadRequestException;
 import com.exportify.features.users.model.RolUser;
-import com.exportify.features.users.model.Users; // O 'Users' si no cambiaste el nombre
+import com.exportify.features.users.model.Users;
 import com.exportify.features.users.repository.UserRepository;
 import com.exportify.security.dto.AuthRequest;
 import com.exportify.security.dto.AuthResponse;
@@ -26,25 +26,23 @@ public class AuthService {
 
     // --- LOGIN ---
     public AuthResponse login(AuthRequest req) {
-        // 1. Autenticar credenciales (Email y Password)
-        // Spring Security revisa si coinciden. Si no, lanza error automáticamente.
+        // 1. Validar credenciales
         authManager.authenticate(new UsernamePasswordAuthenticationToken(
-                req.email(),
-                req.password() // En tu DTO debe llamarse 'password'
-        ));
+                req.email(), req.password()));
 
-        // 2. Buscar usuario para sacar sus datos
+        // 2. Buscar usuario
         Users user = userRepository.findByEmailIgnoreCase(req.email())
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
-        // 3. Generar el Token
+        // 3. Generar Token
         String jwt = jwtService.generateToken(user.getEmail());
 
-        // 4. Responder
-        return new AuthResponse(user.getName(), user.getEmail(), user.getRol(), jwt);
+        // 4. Responder con TODO (incluyendo el ID)
+        // OJO: Aquí estaba el error, ahora pasamos 'jwt' y 'user.getId()'
+        return new AuthResponse(jwt, user.getName(), user.getEmail(), user.getRol(), user.getId());
     }
 
-    // --- REGISTER (Registro público) ---
+    // --- REGISTER ---
     public AuthResponse register(RegisterRequest req) {
         // 1. Validar que no exista el email
         if (userRepository.existsByEmailIgnoreCase(req.email())) {
@@ -70,6 +68,6 @@ public class AuthService {
         // 4. Generar Token para que quede logueado automáticamente
         String jwt = jwtService.generateToken(newUser.getEmail());
 
-        return new AuthResponse(newUser.getName(), newUser.getEmail(), newUser.getRol(), jwt);
+        return new AuthResponse(jwt, newUser.getName(), newUser.getEmail(), newUser.getRol(), newUser.getId());
     }
 }
