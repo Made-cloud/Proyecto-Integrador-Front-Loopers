@@ -3,167 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión
-    </title>
-    <link rel="stylesheet" href="/assets/css/formulario.css">
-    <script src="../assets/js/formulario.js"></script>
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/layout.js"></script>
-    <script src="../assets/js/carrito.js"></script>
+    <title>Registro - Exportify</title>
+    <link rel="stylesheet" href="../assets/css/formulario.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <script src="https://kit.fontawesome.com/84d1e351a8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Navbar Fijo -->
+    
     <div id="navbar"></div>
-
 
     <div class="container">
         <div class="login-card">
-
-            <!-- Encabezado -->
             <div class="header">
                 <div class="logo">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-user-plus"></i>
                 </div>
-                    <h1>Registrate en Exportify</h1>
-                <p class="subtitle">
-                    Autenticación con LocalStorage
-                </p>
+                <h1>Regístrate en Exportify</h1>
+                <p class="subtitle">Únete a nuestra comunidad</p>
             </div>
 
-            <!-- Formulario de Registro -->
-            <form id="loginForm" class="login-form">
+            <form id="registerForm" class="login-form">
                 
-                <!-- Campo Nombre -->
                 <div class="form-group">
-                    <label for="name">
-                        <i class="fas fa-envelope"></i> 
-                        Nombre Completo
-                    </label>
-                    <input 
-                        type="name" 
-                        id="name" 
-                        name="name"
-                        placeholder="Juan Manuel Benitez Quiroz"
-                        required>
-                    <div class="error-message" id="nameError">
-                    </div>
+                    <label for="name"><i class="fas fa-user"></i> Nombre Completo</label>
+                    <input type="text" id="name" name="name" placeholder="Ej: Ana Pérez" required>
                 </div>
 
-                <!-- Campo Teléfono -->
                 <div class="form-group">
-                    <label for="phonenumber">
-                        <i class="fas fa-envelope"></i> 
-                        Teléfono
-                    </label>
-                    <input 
-                        type="phonenumber" 
-                        id="phonenumber" 
-                        name="phonenumber"
-                        placeholder="+569 1234 5678"
-                        required>
-                    <div class="error-message" id="phonenumberError">
-                    </div>
+                    <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="usuario@ejemplo.com" required>
                 </div>
 
-                <!-- Campo Email -->
                 <div class="form-group">
-                    <label for="email">
-                        <i class="fas fa-envelope"></i> Correo Electrónico
-                    </label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email"
-                        placeholder="usuario@ejemplo.com"
-                        required>
-                    <div class="error-message" id="emailError"></div>
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> Dirección</label>
+                    <input type="text" id="address" name="address" placeholder="Ej: Av. Siempre Viva 123" required>
                 </div>
 
-                <!-- Campo Contraseña -->
                 <div class="form-group">
-                    <label for="password">
-                        <i class="fas fa-key"></i> 
-                            Contraseña
-                    </label>
+                    <label for="phoneNumber"><i class="fas fa-phone"></i> Teléfono</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="912345678" required maxlength="9">
+                </div>
+
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-key"></i> Contraseña</label>
                     <div class="password-container">
-                        <input 
-                            type="password" 
-                            id="password" 
-                            name="password"
-                            placeholder="Crea tu contraseña"
-                            required>
-                        <button type="button" id="togglePassword" class="toggle-password">
-                            <i class="fas fa-eye"></i>
-                        </button>
+                        <input type="password" id="password" name="password" placeholder="Crea tu contraseña" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
                     </div>
-                    <div class="error-message" id="passwordError"></div>
                 </div>
 
                 <div class="form-group">
-  <label for="passwordcheck">
-    <i class="fas fa-key"></i>
-    Repita Contraseña
-  </label>
-
-  <div class="password-container">
-    <input 
-      type="password"
-      id="passwordcheck"
-      name="passwordcheck"
-      placeholder="Repita su contraseña"
-      required
-    >
-
-    <button type="button" id="togglePassword" class="toggle-password">
-      <i class="fas fa-eye"></i>
-    </button>
-  </div>
-
-  <div class="error-message" id="passwordcheckError"></div>
-</div>
-
-
-                <!-- Recordarme -->
-                <div class="form-group remember">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">
-                        Recordar mi sesión
-                    </label>
+                    <label for="confirmPassword"><i class="fas fa-check-double"></i> Repetir Contraseña</label>
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repite tu contraseña" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
                 </div>
 
-                <!-- Botón de Envío -->
                 <button type="submit" class="submit-btn">
-                    <i class="fas fa-sign-in-alt"></i> 
-                        Crear Cuenta
+                    <i class="fas fa-user-plus"></i> Crear Cuenta
                 </button>
 
-                <!-- Enlaces adicionales 
                 <div class="links">
-                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
-                    <a href="#" class="register-link">Crear una cuenta</a>
-                </div> -->
+                    <a href="login.html" class="register-link">¿Ya tienes cuenta? Inicia sesión</a>
+                </div>
 
-                <!-- Mensaje de error general -->
                 <div class="error-message general" id="generalError"></div>
-
-                <!-- Mensaje de éxito -->
-                <div class="success-message" id="successMessage"></div>
-           
             </form>
-   
         </div>
     </div>
 
-        <!-- Footer -->
+    <div id="footer"></div>
 
-    
-     <footer>
-        <div><p class="time" id="currentTime"></p></div>
-        <div id="footer"></div>
-    </footer>
-
-    <script src="/assets/js/formulario.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/login.js"></script>
 </body>
 </html>

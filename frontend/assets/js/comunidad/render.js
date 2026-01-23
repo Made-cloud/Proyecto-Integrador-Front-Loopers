@@ -1,81 +1,109 @@
 import { calcularTiempoRelativo } from './utils.js';
 
-// --- FUNCIONES DE DIBUJADO (RENDER) ---
-
-// 1. Dibuja la lista de amigos en la barra lateral
-export function renderizarSeguidos(listaUsuarios, elementoContenedor) {
-    elementoContenedor.innerHTML = ''; // Limpiamos antes de pintar
-    listaUsuarios.forEach(u => {
-        elementoContenedor.innerHTML += `<li><img src="${u.avatar}"><span>${u.nombre}</span></li>`;
-    });
-}
-
-// 2. Dibuja todas las publicaciones en el centro
-export function renderizarPublicaciones(listaPosts, elementoContenedor) {
+// Renderiza la lista de publicaciones en el contenedor DOM especificado
+export function renderizarPublicaciones(listaPosts, elementoContenedor, misSeguidos = []) {
     elementoContenedor.innerHTML = '';
     
+    const miId = parseInt(localStorage.getItem('user_id')); 
+
     listaPosts.forEach((post) => {
         const tiempoPost = calcularTiempoRelativo(post.timestamp);
-        
-        // Si hay imagen, creamos la etiqueta img, si no, queda vacío
         let imagenHTML = post.imagen ? `<img src="${post.imagen}" class="post-img">` : '';
-        
-        // Logica visual del Like (Rojo si ya le di like)
         const corazonIcono = post.meGusta ? 'fas fa-heart' : 'far fa-heart';
-        const claseActiva = post.meGusta ? 'like-activo' : '';
+        
+        let botonAccionHTML = '';
+        
+        // Lógica: Si soy el autor, muestro eliminar. Si no, muestro seguir.
+        if (post.authorId && post.authorId === miId) {
+            // Botón Eliminar (Visible solo para el dueño)
+            botonAccionHTML = `
+                <button class="btn-text delete-post-btn" 
+                        data-action="delete" 
+                        data-postid="${post.id}"
+                        style="color: #dc3545; font-size: 0.8rem;">
+                    <i class="fas fa-trash"></i>
+                </button>`;
+        } else if (post.authorId) {
+            // Botón Seguir (Visible para otros)
+            const yaLoSigo = misSeguidos.includes(post.authorId);
+            const texto = yaLoSigo ? 'Siguiendo' : 'Seguir';
+            
+            // Estilos dinámicos según estado
+            const estiloBtn = yaLoSigo 
+                ? 'background:#e0e0e0; color:#333; border:none; padding:5px 12px; border-radius:15px; cursor:pointer; font-size:0.8em; font-weight:600;' 
+                : 'background:#003366; color:white; border:none; padding:5px 12px; border-radius:15px; cursor:pointer; font-size:0.8em; font-weight:600;';
 
-        // Construimos el HTML de los comentarios (si existen)
-        let htmlComentarios = '';
-        if (post.comentarios.length > 0) {
-            htmlComentarios = `<div class="caja-comentarios">`;
-            post.comentarios.forEach(com => {
-                const tiempoComentario = calcularTiempoRelativo(com.timestamp);
-                htmlComentarios += `
-                    <div class="comentario-item">
-                        <div class="comentario-content">
-                            <strong>${com.usuario} <span style="font-weight:normal; font-size:0.8em; color:#888;">• ${tiempoComentario}</span></strong>
-                            <p>${com.texto}</p>
-                        </div>
-                    </div>
-                `;
-            });
-            htmlComentarios += `</div>`;
+            botonAccionHTML = `
+                <button style="${estiloBtn}" 
+                        data-action="follow" 
+                        data-userid="${post.authorId}">
+                    ${texto}
+                </button>`;
         }
 
-        // Armamos la tarjeta completa
+        const linkPerfil = `<a href="perfil.html?id=${post.authorId}" style="text-decoration:none; color:inherit; font-weight:700;">${post.usuario}</a>`;
+
         const tarjetaHTML = `
-            <article class="exportify-card post" style="margin-bottom: 20px;">
-                <div class="post-header">
-                    <img class="avatar-post" src="${post.avatar}" alt="Avatar">
-                    <div>
-                        <h4>${post.usuario}</h4>
-                        <span style="font-size: 0.8rem; color: #777;">${tiempoPost}</span>
+            <article class="exportify-card post" id="post-${post.id}" style="margin-bottom: 20px; animation: fadeIn 0.5s ease;">
+                <div class="post-header" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center;">
+                        <a href="perfil.html?id=${post.authorId}">
+                            <img class="avatar-post" src="${post.avatar}" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                        </a>
+                        <div>
+                            <h4 style="margin:0; font-size: 0.95rem;">${linkPerfil}</h4>
+                            <span style="font-size: 0.75rem; color: #777;">${tiempoPost}</span>
+                        </div>
                     </div>
+                    <div>${botonAccionHTML}</div>
                 </div>
                 
-                <div class="post-body">
-                    <p>${post.contenido}</p>
+                <div class="post-body" style="margin-top: 15px;">
+                    <p style="white-space: pre-wrap;">${post.contenido}</p>
                     ${imagenHTML}
                 </div>
 
-                <div class="post-footer">
-                    <span class="accion-btn btn-like ${claseActiva}" data-id="${post.id}">
+                <div class="post-footer" style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #f0f0f0;">
+                    <span class="accion-btn btn-like" data-id="${post.id}" style="cursor: pointer; margin-right: 20px; color: #555;">
                         <i class="${corazonIcono}"></i> ${post.likes}
                     </span>
-                    
-                    <span class="accion-btn btn-comment" data-id="${post.id}">
-                        <i class="far fa-comment"></i> ${post.comentarios.length} Comentarios
+                    <span class="accion-btn" style="cursor: pointer; color: #555;">
+                        <i class="far fa-comment"></i> 0 Comentarios
                     </span>
                 </div>
-
-                <div class="formulario-comentario" id="form-comentario-${post.id}">
-                    <input type="text" placeholder="Escribe una respuesta..." />
-                    <button class="btn-enviar-comentario" data-id="${post.id}">Enviar</button>
-                </div>
-
-                ${htmlComentarios}
             </article>
         `;
         elementoContenedor.innerHTML += tarjetaHTML;
+    });
+}
+
+export function renderizarSeguidos(listaUsuarios, elementoContenedor) {
+    // 1. Limpiamos el contenedor
+    elementoContenedor.innerHTML = '';
+
+    // 2. Si la lista está vacía, mostramos mensaje
+    if (!listaUsuarios || listaUsuarios.length === 0) {
+        elementoContenedor.innerHTML = '<p style="color:#777; font-size:0.9rem; padding:10px;">Aún no sigues a nadie.</p>';
+        return;
+    }
+
+    // 3. Recorremos los usuarios y creamos su HTML
+    listaUsuarios.forEach(user => {
+        // Fallback por si la foto o el nombre vienen vacíos
+        const avatar = user.profilePhoto || user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=random`;
+        const nombre = user.name || "Usuario";
+        const id = user.id || user.id_users; // Ajusta según cómo lo envíe tu Java
+
+        const html = `
+            <div style="display: flex; align-items: center; margin-bottom: 12px; padding: 0 10px;">
+                <a href="perfil.html?id=${id}">
+                    <img src="${avatar}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
+                </a>
+                <a href="perfil.html?id=${id}" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem;">
+                    ${nombre}
+                </a>
+            </div>
+        `;
+        elementoContenedor.innerHTML += html;
     });
 }
