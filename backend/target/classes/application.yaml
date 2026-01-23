@@ -1,8 +1,0 @@
-# Configuracion para perfiles
-
-spring:
-  application:
-    name: tiendita
-    version:
-  profiles:
-    active: prod # se puede cambiar a "dev", "prod" o "test" si es necesario
