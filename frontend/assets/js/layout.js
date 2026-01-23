@@ -50,16 +50,15 @@ document.addEventListener("navbarLoaded", () => {
 function actualizarNavbarConUsuario() {
     const token = localStorage.getItem('jwt_token');
     const userName = localStorage.getItem('user_name') || "Usuario";
+    
+    // 🔥 1. RECUPERAMOS EL ID DEL USUARIO
+    const userId = localStorage.getItem('user_id'); 
 
     if (token) {
         const loginBtn = document.querySelector('.login-btn');
         
         if (loginBtn) {
             // Reemplazamos el botón simple por una estructura de Menú
-            // Nota: Cambiamos <a> por <div> para evitar saltos de página al hacer clic
-            const parent = loginBtn.parentElement;
-            
-            // Creamos el HTML del Dropdown
             const dropdownHTML = `
                 <div class="user-dropdown" id="userMenuBtn">
                     
@@ -73,9 +72,11 @@ function actualizarNavbarConUsuario() {
                         <div style="padding: 10px 20px; border-bottom: 1px solid #eee; font-size: 0.85rem; color: #999;">
                             Mi Cuenta
                         </div>
-                        <a href="../pages/perfil.html">
+                        
+                        <a href="../pages/perfil.html?id=${userId}">
                             <i class="fas fa-id-card"></i> Perfil
                         </a>
+                        
                         <a href="#" onclick="confirmarSalida(event)">
                             <i class="fas fa-sign-out-alt" style="color: #d33;"></i> Cerrar Sesión
                         </a>
@@ -83,25 +84,25 @@ function actualizarNavbarConUsuario() {
                 </div>
             `;
 
-            // Reemplazamos el botón original con nuestro menú
-            // (Ojo: esto elimina el botón .login-btn original y pone el dropdown)
             loginBtn.outerHTML = dropdownHTML;
 
-            // --- LÓGICA PARA ABRIR/CERRAR EL MENÚ ---
+            // LÓGICA DEL MENÚ (Click para abrir/cerrar)
             const menuBtn = document.getElementById('userMenuBtn');
             const dropdown = document.getElementById('myDropdown');
 
-            menuBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Evitar que el clic se propague
-                dropdown.classList.toggle('show');
-            });
+            // Verificamos que los elementos existan antes de agregar eventos (por seguridad)
+            if (menuBtn && dropdown) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    dropdown.classList.toggle('show');
+                });
 
-            // Cerrar el menú si haces clic fuera de él
-            window.addEventListener('click', (e) => {
-                if (!menuBtn.contains(e.target)) {
-                    dropdown.classList.remove('show');
-                }
-            });
+                window.addEventListener('click', (e) => {
+                    if (!menuBtn.contains(e.target)) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            }
         }
     }
 }
