@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ce929da-976c-469c-9def-b67f17cbbcfb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2ce929da-976c-469c-9def-b67f17cbbcfb" name="Changes" comment="" />
     <list id="e1f8c055-bba6-4f57-9c0c-4e91cd91dd1d" name="Changes by Genchile INV_TI_227" comment="" />
     <list id="f42c819e-ca43-4763-a9f8-8b9c8116ce34" name="Changes by GENCHILE INV_TI_327" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,6 +120,7 @@
       <workItem from="1769145728860" duration="383000" />
       <workItem from="1769170352199" duration="9000" />
       <workItem from="1769177272747" duration="151000" />
+      <workItem from="1769177927013" duration="26000" />
     </task>
     <servers />
   </component>
