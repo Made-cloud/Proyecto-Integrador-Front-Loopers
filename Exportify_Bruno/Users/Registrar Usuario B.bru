@@ -1,0 +1,26 @@
+meta {
+  name: Registrar Usuario B
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/auth/register
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Madelaine Java",
+    "email": "made@correo.com",
+    "password": "123456",
+    "address": "Valpo",
+    "phoneNumber": "987654321"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

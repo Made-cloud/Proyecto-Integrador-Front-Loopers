@@ -46,6 +46,15 @@ public class PostServiceImpl {
                 .toList();
     }
 
+    // --- NUEVO: LISTAR POR USUARIO (Faltaba esto) ---
+    public List<PostResponse> getPostsByUser(Long userId) {
+        // Asegúrate de tener 'findByAuthorIdOrderByCreatedAtDesc' en tu PostRepository
+        return postRepository.findByAuthorIdOrderByCreatedAtDesc(userId).stream()
+                .filter(Post::isActive)
+                .map(this::toResponse)
+                .toList();
+    }
+
     // --- EDITAR (Solo el dueño) ---
     public PostResponse updatePost(Long postId, PostRequest request, String emailUsuarioActual) {
         Post post = postRepository.findById(postId)
@@ -109,8 +118,9 @@ public class PostServiceImpl {
                 post.getId(),
                 post.getContent(),
                 post.getImageUrl(),
+                post.getAuthor().getId(),
                 post.getAuthor().getName(),
-                "https://i.pravatar.cc/150?u=" + post.getAuthor().getId(),
+                "https://ui-avatars.com/api/?name=" + post.getAuthor().getName(),
                 post.getLikesCount(),
                 post.getCreatedAt()
         );

@@ -10,9 +10,11 @@ import com.exportify.features.users.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -89,6 +91,53 @@ public class UserServiceImpl implements UserService {
     }
     private static boolean isBlank(String str) {
         return str == null || str.isBlank();
+    }
+
+    //        IMPLEMENTACIÓN DE SEGUIDORES
+    @Override
+    @Transactional // Importante para guardar la relación en la DB
+    public void followUser(Long myId, Long targetId) {
+        if (myId.equals(targetId)) {
+            throw new BadRequestException("No puedes seguirte a ti mismo 😅");
+        }
+
+        Users me = repository.findById(myId)
+                .orElseThrow(() -> new NotFoundException("Usuario origen no encontrado ID: " + myId));
+
+        Users target = repository.findById(targetId)
+                .orElseThrow(() -> new NotFoundException("Usuario a seguir no encontrado ID: " + targetId));
+
+        // Agregamos a la lista de seguidos
+        me.getFollowing().add(target);
+
+        // Guardamos (Hibernate actualiza la tabla intermedia user_follows)
+        repository.save(me);
+    }
+
+    @Override
+    @Transactional
+    public void unfollowUser(Long myId, Long targetId) {
+        Users me = repository.findById(myId)
+                .orElseThrow(() -> new NotFoundException("Usuario no encontrado"));
+
+        Users target = repository.findById(targetId)
+                .orElseThrow(() -> new NotFoundException("Usuario destino no encontrado"));
+
+        // Removemos de la lista
+        me.getFollowing().remove(target);
+        repository.save(me);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<UserResponse> getFollowingList(Long myId) {
+        Users me = repository.findById(myId)
+                .orElseThrow(() -> new NotFoundException("Usuario no encontrado ID: " + myId));
+
+        // Obtenemos el Set de usuarios y lo convertimos a lista de UserResponse
+        return me.getFollowing().stream()
+                .map(UserMapper::toResponse)
+                .collect(Collectors.toList());
     }
 
 
