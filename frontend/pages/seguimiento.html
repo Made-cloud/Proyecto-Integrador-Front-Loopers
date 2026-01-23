@@ -6,9 +6,8 @@
     <title>Seguimiento - Exportify</title>
     
     <link rel="stylesheet" href="../assets/css/seguimiento.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../assets/js/carrito.js"></script>
     <script src="../assets/js/seguimiento.js" defer></script>
 </head>
@@ -23,6 +22,219 @@
                 <div class="search">
                     <input id="trackInput" type="text" placeholder="Ej: CL123456789ES" value="CL123456789ES" aria-label="Número de tracking" />
                     <button id="btnTrack" class="btn-primary">Rastrear</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Sección de Gamificación -->
+    <section class="gamificacion">
+        <div class="container">
+            <div class="gamificacion-header">
+                <h2><i class="fas fa-trophy"></i> Mis Cursos Exportify</h2>
+                <div class="user-stats">
+                    <div class="stat">
+                        <span class="stat-value">3/6</span>
+                        <span class="stat-label">Cursos Completados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">850</span>
+                        <span class="stat-label">Puntos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">2</span>
+                        <span class="stat-label">Logros</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-overview">
+                <div class="progress-bar-container">
+                    <div class="progress-label">
+                        <span>Progreso General</span>
+                        <span>50%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cursos-grid">
+                
+                <!-- Curso 1 -->
+                <div class="curso-card completo">
+                    <div class="curso-icon">
+                        <i class="fas fa-globe-americas"></i>
+                        <span class="badge-completo"><i class="fas fa-check"></i></span>
+                    </div>
+                    <div class="curso-info">
+                        <h4>Gestión Técnica del Proceso de Exportación</h4>
+                        <p>Aprende los fundamentos básicos para comenzar a exportar</p>
+                        <div class="curso-meta">
+                            <span><i class="far fa-clock"></i> 4 horas</span>
+                            <span><i class="fas fa-star"></i> 100 pts</span>
+                        </div>
+                    </div>
+                    <div class="curso-progress">
+                        <div class="progress-circle completo">
+                            <span>100%</span>
+                        </div>
+                        <button class="btn-secondary" disabled>Completado</button>
+                    </div>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="curso-card completo">
+                    <div class="curso-icon">
+                        <i class="fas fa-file-contract"></i>
+                        <span class="badge-completo"><i class="fas fa-check"></i></span>
+                    </div>
+                    <div class="curso-info">
+                        <h4>Certificaciones y Acreditaciones para la Exportación</h4>
+                        <p>Domina los documentos necesarios para el comercio internacional</p>
+                        <div class="curso-meta">
+                            <span><i class="far fa-clock"></i> 6 horas</span>
+                            <span><i class="fas fa-star"></i> 150 pts</span>
+                        </div>
+                    </div>
+                    <div class="curso-progress">
+                        <div class="progress-circle completo">
+                            <span>100%</span>
+                        </div>
+                        <button class="btn-secondary" disabled>Completado</button>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="curso-card completo">
+                    <div class="curso-icon">
+                        <i class="fas fa-box-open"></i>
+                        <span class="badge-completo"><i class="fas fa-check"></i></span>
+                    </div>
+                    <div class="curso-info">
+                        <h4>Marketing Digital</h4>
+                        <p>Técnicas de embalaje para transporte internacional</p>
+                        <div class="curso-meta">
+                            <span><i class="far fa-clock"></i> 5 horas</span>
+                            <span><i class="fas fa-star"></i> 125 pts</span>
+                        </div>
+                    </div>
+                    <div class="curso-progress">
+                        <div class="progress-circle completo">
+                            <span>100%</span>
+                        </div>
+                        <button class="btn-secondary" disabled>Completado</button>
+                    </div>
+                </div>
+
+                <!-- Curso 4 -->
+                <div class="curso-card en-progreso">
+                    <div class="curso-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span class="badge-progreso">65%</span>
+                    </div>
+                    <div class="curso-info">
+                        <h4>Normativa Aduanera y Tributaria Chilena Aplicada a la Exportación</h4>
+                        <p>Gestión de pagos, divisas y riesgos cambiarios</p>
+                        <div class="curso-meta">
+                            <span><i class="far fa-clock"></i> 8 horas</span>
+                            <span><i class="fas fa-star"></i> 200 pts</span>
+                        </div>
+                    </div>
+                    <div class="curso-progress">
+                        <div class="progress-circle progreso">
+                            <span>65%</span>
+                        </div>
+                        <button class="btn-primary">Continuar</button>
+                    </div>
+                </div>
+
+                <!-- Curso 5 -->
+                <div class="curso-card bloqueado">
+                    <div class="curso-icon">
+                        <i class="fas fa-gavel"></i>
+                        <span class="badge-bloqueado"><i class="fas fa-lock"></i></span>
+                    </div>
+                    <div class="curso-info">
+                        <h4>Documentación y Logística Internacional de Exportación</h4>
+                        <p>Conoce las leyes que rigen el comercio exterior</p>
+                        <div class="curso-meta">
+                            <span><i class="far fa-clock"></i> 7 horas</span>
+                            <span><i class="fas fa-star"></i> 175 pts</span>
+                        </div>
+                    </div>
+                    <div class="curso-progress">
+                        <div class="progress-circle bloqueado">
+                            <span>0%</span>
+                        </div>
+                        <button class="btn-bloqueado" disabled>Bloqueado</button>
+                    </div>
+                </div>
+
+                <!-- Curso 6 -->
+                <div class="curso-card bloqueado">
+                    <div class="curso-icon">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="badge-bloqueado"><i class="fas fa-lock"></i></span>
+                    </div>
+                    <div class="curso-info">
+                        <h4>Tratados de Libre Comercio y Reglas de Origen</h4>
+                        <p>Expande tu negocio a mercados internacionales</p>
+                        <div class="curso-meta">
+                            <span><i class="far fa-clock"></i> 10 horas</span>
+                            <span><i class="fas fa-star"></i> 250 pts</span>
+                        </div>
+                    </div>
+                    <div class="curso-progress">
+                        <div class="progress-circle bloqueado">
+                            <span>0%</span>
+                        </div>
+                        <button class="btn-bloqueado" disabled>Bloqueado</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logros -->
+            <div class="logros-section">
+                <h3><i class="fas fa-award"></i> Mis Logros</h3>
+                <div class="logros-grid">
+                    <div class="logro-card obtenido">
+                        <div class="logro-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="logro-info">
+                            <h5>Primeros Pasos</h5>
+                            <p>Completa tu primer curso</p>
+                        </div>
+                    </div>
+                    <div class="logro-card obtenido">
+                        <div class="logro-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="logro-info">
+                            <h5>Velocidad Express</h5>
+                            <p>Completa 3 cursos en una semana</p>
+                        </div>
+                    </div>
+                    <div class="logro-card pendiente">
+                        <div class="logro-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="logro-info">
+                            <h5>Maestro Exportador</h5>
+                            <p>Completa todos los cursos</p>
+                        </div>
+                    </div>
+                    <div class="logro-card pendiente">
+                        <div class="logro-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="logro-info">
+                            <h5>Ciudadano Global</h5>
+                            <p>Alcanza 1000 puntos</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
