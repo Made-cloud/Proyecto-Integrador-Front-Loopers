@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -48,4 +50,23 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
+    // POST: http://localhost:8080/users/1/follow/5
+    @PostMapping("/{myId}/follow/{targetId}")
+    public ResponseEntity<String> followUser(@PathVariable Long myId, @PathVariable Long targetId) {
+        service.followUser(myId, targetId);
+        return ResponseEntity.ok("¡Usuario seguido con éxito!");
+    }
+
+    // DELETE: http://localhost:8080/users/1/unfollow/5
+    @DeleteMapping("/{myId}/unfollow/{targetId}")
+    public ResponseEntity<String> unfollowUser(@PathVariable Long myId, @PathVariable Long targetId) {
+        service.unfollowUser(myId, targetId);
+        return ResponseEntity.ok("Dejaste de seguir al usuario.");
+    }
+
+    // GET: http://localhost:8080/users/1/following
+    @GetMapping("/{myId}/following")
+    public ResponseEntity<List<UserResponse>> getMyFollowing(@PathVariable Long myId) {
+        return ResponseEntity.ok(service.getFollowingList(myId));
+    }
 }

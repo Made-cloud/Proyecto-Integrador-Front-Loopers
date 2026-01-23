@@ -1,0 +1,15 @@
+meta {
+  name: Registrar Usuario A
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/auth/register
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

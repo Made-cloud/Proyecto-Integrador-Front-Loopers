@@ -6,8 +6,9 @@ public record PostResponse(
         Long id,
         String content,
         String imageUrl,
-        String authorName, // Solo enviamos el nombre, no todo el usuario
-        String avatarUrl,  // (Opcional) Si tu usuario tuviera avatar
+        Long authorId,
+        String authorName,
+        String avatarUrl,
         int likes,
         LocalDateTime createdAt
 ) {}

@@ -13,4 +13,8 @@ public interface UserService {
     void desactivate(Long id);
     List<UserResponse> listUsers();
 
+    // --- NUEVOS MÉTODOS PARA SEGUIDORES ---
+    void followUser(Long myId, Long targetId);
+    void unfollowUser(Long myId, Long targetId);
+    List<UserResponse> getFollowingList(Long myId);
 }
